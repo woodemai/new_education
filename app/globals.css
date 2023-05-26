@@ -14,14 +14,82 @@ a {
 
 /* header */
 header {
-
+    padding: 20px;
+    background-color: hsla(0, 5%, 100%, .5);
+    backdrop-filter: saturate(180%) blur(3px);
+    box-shadow: 0 5px 10px 10px hsla(0, 0%, 95%, .5);
+    position: sticky;
+    top: 0;
 }
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li {
+    margin-left: 14px;
+}
+
+header a {
+    color: #333;
+
+    transition: .15s linear;
+}
+
+header a:hover {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
 /* footer */
 footer {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: hsla(0, 5%, 100%, .5);
+    backdrop-filter: saturate(180%) blur(3px);
+    box-shadow: 0 5px 10px 10px hsla(0, 0%, 95%, .5);
+    position: sticky;
+    bottom: 0;
 }
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer span {
+    color: #333;
+    margin-top: 10px;
+}
+
+footer a {
+    transition: .15s linear;
+}
+
+footer a:hover {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
 /* main */
 main {
+    padding: 20px 0;
     min-height: 100vh;
     max-width: min(800px, 100vw);
     width: 100%;
