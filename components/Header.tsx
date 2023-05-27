@@ -4,6 +4,7 @@ import {useSession} from 'next-auth/react'
 
 export default function Header() {
     const {data: session} = useSession()
+    console.log(session)
     const authLink = session
         ? <Link href="/api/auth/signout"> Logout </Link>
         : <Link href="/api/auth/signin"> Login </Link>
