@@ -1,9 +1,13 @@
 'use client'
 import Link from "next/link";
-import {signIn} from 'next-auth/react'
-import Button from "@/components/Button";
+import {useSession} from 'next-auth/react'
 
 export default function Header() {
+    const {data: session} = useSession()
+    const authLink = session
+        ? <Link href="/api/auth/signout"> Logout </Link>
+        : <Link href="/api/auth/signin"> Login </Link>
+
     return (
         <header>
             <nav>
@@ -13,7 +17,7 @@ export default function Header() {
                     <li><Link href={'/courses'}>Courses</Link></li>
                     <li><Link href={'/profile'}>Profile</Link></li>
                     <li><Link href={'/courses'}>Settings</Link></li>
-                    <li><Button onClick={() => signIn()}>Sign In</Button></li>
+                    <li>{authLink}</li>
                 </ul>
             </nav>
         </header>

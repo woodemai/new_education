@@ -4,11 +4,6 @@ import prisma from "@/lib/prisma";
 import Button from "@/components/Button";
 import {Course} from "@prisma/client";
 
-export interface CourseProps {
-    id: string;
-    title: string;
-    body: string;
-}
 async function getCourses ():Promise<Course[]> {
     return prisma.course.findMany({orderBy: {
         title: 'desc'

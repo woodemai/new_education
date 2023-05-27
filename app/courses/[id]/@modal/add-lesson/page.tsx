@@ -48,9 +48,9 @@ export default function AddLessonPage({params}: { params: { id: string } }) {
             <form onSubmit={handleAdd} method={'post'}>
                 <h2>Create new lesson {heading}</h2>
                 <Input title={"Name"} type={'text'}
-                       onChangeInput={e => setLesson({...lesson, title: String(e.target.value)})}/>
+                       onChangeInput={e => setLesson({...lesson, title: e.target.value.trim()})}/>
                 <Input title={"Description"} type={'text'}
-                       onChangeArea={e => setLesson({...lesson, body: String(e.target.value)})} isArea={true}/>
+                       onChangeArea={e => setLesson({...lesson, body: e.target.value.trim()})} isArea={true}/>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>

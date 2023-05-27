@@ -3,13 +3,7 @@ import {useEffect, useState} from "react";
 import List from "@/components/List";
 import Item from "@/components/Item";
 import CourseLoad from "@/components/loading/CourseLoad";
-
-export interface LessonProps {
-    id: string;
-    courseId: string;
-    title: string;
-    body: string;
-}
+import {LessonProps} from "@/lib/interfaces";
 
 export default function Lessons({params}: { params: { id: string } }) {
     const {id} = params;

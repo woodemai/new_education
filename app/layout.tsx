@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import {Metadata} from "next";
 import {Analytics} from '@vercel/analytics/react';
+import {NextAuthProvider} from "@/components/NextAuthProvider";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -17,12 +18,14 @@ export default function RootLayout({children}: { children: ReactNode }) {
     return (
         <html lang="en">
         <body className={inter.className}>
-        <Header/>
-        <main>
-            {children}
-            <Analytics/>
-        </main>
-        <Footer/>
+        <NextAuthProvider>
+            <Header/>
+            <main>
+                {children}
+                <Analytics/>
+            </main>
+            <Footer/>
+        </NextAuthProvider>
         </body>
         </html>
     )

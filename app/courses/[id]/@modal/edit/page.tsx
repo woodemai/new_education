@@ -12,7 +12,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     const router = useRouter()
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch(`/api/${id}`, {
+            const response = await fetch(`/api/course/${id}`, {
                 method: "GET"
             });
             if (!response.ok) {
@@ -56,9 +56,9 @@ export default function EditPage({params}: { params: { id: string } }) {
         <Modal>
             <form onSubmit={handleEdit} method={'post'}>
                 <Input title={"Name"} type={'text'} defaultValue={course.title}
-                       onChangeInput={e => setCourse({...course, title: String(e.target.value)})}/>
+                       onChangeInput={e => setCourse({...course, title: e.target.value.trim()})}/>
                 <Input title={"Description"} type={'text'} defaultValue={course.body}
-                       onChangeArea={e => setCourse({...course, body: String(e.target.value)})} isArea={true}/>
+                       onChangeArea={e => setCourse({...course, body: e.target.value.trim()})} isArea={true}/>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>
