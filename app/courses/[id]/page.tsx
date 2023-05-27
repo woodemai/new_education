@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 import styles from '../../../styles/utils.module.css'
 import {useRouter} from "next/navigation";
 
-export async function generateStaticProps() {
+async function generateStaticProps(): Promise<void[]> {
     const courses = await fetch(`/api/courses`, {
         method: "GET",
         headers: {
