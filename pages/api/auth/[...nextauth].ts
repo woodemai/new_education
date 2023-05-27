@@ -13,10 +13,9 @@ const handler = {
     providers: [
         YandexProvider({
             clientId: String(process.env.YANDEX_CLIENT_ID),
-            clientSecret: String(process.env.YANDEX_CLIENT_SECRET)
+            clientSecret: String(process.env.YANDEX_CLIENT_SECRET),
         })
     ],
-    secret: process.env.NEXTAUTH_SECRET
 }
 
 export {handler as GET, handler as POST}
