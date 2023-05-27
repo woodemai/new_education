@@ -43,7 +43,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     return (
         <Modal>
             <form onSubmit={handleRemove} method={'post'} className={styles.container}>
-                <h2>Are you sure you want to delete course "{course.title}"?</h2>
+                <h2>Are you sure you want to delete course {course.title}?</h2>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>

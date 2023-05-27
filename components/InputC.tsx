@@ -1,10 +1,6 @@
 import styles from '../styles/utils.module.css'
 import React, {
-    ChangeEvent,
-    Dispatch,
-    SetStateAction,
-    useEffect,
-    useState
+    ChangeEvent
 } from "react";
 
 interface InputProps {
@@ -12,30 +8,26 @@ interface InputProps {
     type: 'text' | 'password' | 'number';
     defaultValue?: string;
     isArea?: boolean;
-    setValue: Dispatch<SetStateAction<string>>;
+    onChangeInput?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChangeArea?: (e: ChangeEvent<HTMLTextAreaElement>) => void
+
 }
 
-export default function Input(props: InputProps) {
-    const id = props.title.trim().toLowerCase();
-    const [value, setValue] = useState<string>("");
-
-    useEffect(() => {
-        props.setValue(value)
-    }, [value]);
-    if (props.isArea) {
+export default function Input({title, type, defaultValue, isArea, onChangeArea, onChangeInput}: InputProps) {
+    const id = title.trim().toLowerCase();
+    if (isArea) {
         return (
             <div className={styles.input}>
-                <label htmlFor={id}>{props.title}</label>
-                <textarea id={id}
-                          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value)}>{props.defaultValue}</textarea>
+                <label htmlFor={id}>{title}</label>
+                <textarea id={id} onChange={onChangeArea} defaultValue={defaultValue}/>
             </div>
         )
     }
     return (
         <div className={styles.input}>
-            <label htmlFor={id}>{props.title}</label>
-            <input type={props.type} id={id} defaultValue={props.defaultValue}
-                   onChange={(e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}/>
+            <label htmlFor={id}>{title}</label>
+            <input type={type} id={id} defaultValue={defaultValue}
+                   onChange={onChangeInput}/>
         </div>
     )
 }

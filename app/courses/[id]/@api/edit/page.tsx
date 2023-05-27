@@ -5,10 +5,9 @@ import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {CourseProps} from "@/app/courses/page";
+
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [title, setTitle] = useState<string>("");
-    const [body, setBody] = useState<string>("");
     const [course, setCourse] = useState<CourseProps | null>();
     const router = useRouter()
     useEffect(() => {
@@ -36,6 +35,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleEdit = async () => {
+        const {title, body} = course;
         await fetch(`/api/course`, {
             method: "PUT",
             headers: {
@@ -49,14 +49,16 @@ export default function EditPage({params}: { params: { id: string } }) {
                 }
             )
         });
-        router.refresh()
-        router.back()
+        await router.back()
+        await router.refresh()
     };
     return (
         <Modal>
             <form onSubmit={handleEdit} method={'post'}>
-                <Input title={"Name"} type={'text'} defaultValue={course.title} setValue={setTitle}/>
-                <Input title={"Description"} type={'text'} defaultValue={course.body} setValue={setBody} isArea={true}/>
+                <Input title={"Name"} type={'text'} defaultValue={course.title}
+                       onChangeInput={e => setCourse({...course, title: String(e.target.value)})}/>
+                <Input title={"Description"} type={'text'} defaultValue={course.body}
+                       onChangeArea={e => setCourse({...course, body: String(e.target.value)})} isArea={true}/>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>
