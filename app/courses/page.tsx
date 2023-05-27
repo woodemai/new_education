@@ -19,7 +19,9 @@ export default async function Courses () {
     return (
         <>
             <h1>Courses</h1>
-            <List items={courses} element={(course) => <Item name={course.title} description={course.body} href={`courses/${course.id}`}/>} heading={'My courses'}/>
+            <List items={courses}
+                  element={(course) => <Item key={course.id} name={course.title} description={course.body}
+                                             href={`courses/${course.id}`}/>} heading={'My courses'}/>
             <Button href={'/courses/add'}>Add course</Button>
         </>
     )

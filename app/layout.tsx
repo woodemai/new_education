@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Modern, fast, secure',
 }
 
-export default function RootLayout({children, auth}: { children: ReactNode, auth: ReactNode }) {
+export default function RootLayout({children}: { children: ReactNode }) {
     return (
         <html lang="en">
         <body className={inter.className}>
@@ -23,7 +23,6 @@ export default function RootLayout({children, auth}: { children: ReactNode, auth
             <Analytics/>
         </main>
         <Footer/>
-        {auth}
         </body>
         </html>
     )

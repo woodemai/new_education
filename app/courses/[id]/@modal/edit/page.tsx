@@ -36,7 +36,7 @@ export default function EditPage({params}: { params: { id: string } }) {
 
     const handleEdit = async () => {
         const {title, body} = course;
-        await fetch(`/api/course`, {
+        await fetch(`/api/course/course`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

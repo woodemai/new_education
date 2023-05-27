@@ -11,7 +11,7 @@ export default function Add() {
     const router = useRouter()
     const handleAdd = async () => {
         const {title, body} = course
-        await fetch(`/api/course`, {
+        await fetch(`/api/course/course`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

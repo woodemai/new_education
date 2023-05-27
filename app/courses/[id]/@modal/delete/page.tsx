@@ -5,13 +5,14 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {CourseProps} from "@/app/courses/page";
 import styles from '../../../../../styles/utils.module.css'
+
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
     const [course, setCourse] = useState<CourseProps | null>();
     const router = useRouter()
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch(`/api/${id}`, {
+            const response = await fetch(`/api/course/${id}`, {
                 method: "GET"
             });
             if (!response.ok) {
@@ -34,7 +35,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleRemove = async () => {
-        await fetch(`/api/${id}`, {
+        await fetch(`/api/course/${id}`, {
             method: "DELETE"
         });
         router.refresh()

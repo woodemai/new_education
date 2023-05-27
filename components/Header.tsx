@@ -1,4 +1,7 @@
+'use client'
 import Link from "next/link";
+import {signIn} from 'next-auth/react'
+import Button from "@/components/Button";
 
 export default function Header() {
     return (
@@ -8,9 +11,9 @@ export default function Header() {
                 <ul>
                     <li><Link href={'/'}>Home</Link></li>
                     <li><Link href={'/courses'}>Courses</Link></li>
-                    <li><Link href={'/courses'}>Profile</Link></li>
+                    <li><Link href={'/profile'}>Profile</Link></li>
                     <li><Link href={'/courses'}>Settings</Link></li>
-                    <li><Link href={'/login'}>Login</Link></li>
+                    <li><Button onClick={() => signIn()}>Sign In</Button></li>
                 </ul>
             </nav>
         </header>
