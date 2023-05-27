@@ -1,5 +1,5 @@
+import CourseLoad from "@/components/loading/CourseLoad";
+
 export default function Loading() {
-    return (
-        <h1>Loading course...</h1>
-    )
+    return (<CourseLoad/>);
 }

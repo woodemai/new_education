@@ -9,7 +9,7 @@ export default function CoursePage({params}: { params: { id: string } }) {
     return (
         <>
             <div className={styles.list}>
-                <Button onClick={() => router.push(`/courses/${id}/lessons/add`)}>Add lesson</Button>
+                <Button onClick={() => router.push(`/courses/${id}/add-lesson`)}>Add lesson</Button>
             </div>
             <div className={styles.list}>
                 <Button onClick={() => router.push(`/courses/${id}/edit`)}>Edit</Button>

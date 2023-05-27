@@ -1,7 +1,7 @@
 'use client';
 import Modal from "@/components/Modal";
 import Button from "@/components/Button";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Input from "@/components/InputC";
 import {useRouter} from "next/navigation";
 import {CourseProps} from "@/app/courses/page";
@@ -26,12 +26,22 @@ export default function Add() {
         router.refresh()
         router.back()
     };
+    const [heading, setHeading] = useState<string>('');
+    useEffect(() => {
+        if (course.title !== "") {
+            setHeading(`named "${course.title}"`);
+        } else {
+            setHeading('');
+        }
+    }, [course.title]);
     return (
         <Modal>
             <form onSubmit={handleAdd} method={'post'}>
-                <Input title={"Name"} type={'text'} onChangeInput={e => setCourse({...course, title: e.target.value})}/>
+                <h2>Create new course {heading}</h2>
+                <Input title={"Name"} type={'text'}
+                       onChangeInput={e => setCourse({...course, title: e.target.value.trim()})}/>
                 <Input title={"Description"} type={'text'}
-                       onChangeArea={e => setCourse({...course, body: e.target.value})} isArea={true}/>
+                       onChangeArea={e => setCourse({...course, body: e.target.value.trim()})} isArea={true}/>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>
