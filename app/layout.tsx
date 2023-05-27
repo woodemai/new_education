@@ -4,6 +4,7 @@ import {ReactNode} from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import {Metadata} from "next";
+import {Analytics} from '@vercel/analytics/react';
 
 const inter = Inter({subsets: ['latin']})
 
@@ -19,6 +20,7 @@ export default function RootLayout({children, auth}: { children: ReactNode, auth
         <Header/>
         <main>
             {children}
+            <Analytics/>
         </main>
         <Footer/>
         {auth}
