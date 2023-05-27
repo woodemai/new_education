@@ -4,7 +4,7 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {LessonProps} from "@/app/courses/[id]/@lesson/page";
+import {LessonProps} from "@/lib/interfaces";
 
 export default function AddLessonPage({params}: { params: { id: string } }) {
     const {id} = params;
