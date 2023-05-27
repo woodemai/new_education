@@ -4,12 +4,13 @@ import Button from "@/components/Button";
 import {useState} from "react";
 import Input from "@/components/InputC";
 import {useRouter} from "next/navigation";
+import {CourseProps} from "@/app/courses/page";
 
 export default function Add() {
-    const [title, setTitle] = useState<string>("");
-    const [body, setBody] = useState<string>("");
+    const [course, setCourse] = useState<CourseProps>({id: '', title: '', body: ''});
     const router = useRouter()
     const handleAdd = async () => {
+        const {title, body} = course
         await fetch(`/api/course`, {
             method: "POST",
             headers: {
@@ -28,8 +29,9 @@ export default function Add() {
     return (
         <Modal>
             <form onSubmit={handleAdd} method={'post'}>
-                <Input title={"Name"} type={'text'} setValue={setTitle}/>
-                <Input title={"Description"} type={'text'} setValue={setBody} isArea={true}/>
+                <Input title={"Name"} type={'text'} onChangeInput={e => setCourse({...course, title: e.target.value})}/>
+                <Input title={"Description"} type={'text'}
+                       onChangeArea={e => setCourse({...course, body: e.target.value})} isArea={true}/>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>
