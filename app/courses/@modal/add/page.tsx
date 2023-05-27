@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import Input from "@/components/InputC";
 import {useRouter} from "next/navigation";
-import {CourseProps} from "@/app/courses/page";
+import {CourseProps} from "@/lib/interfaces";
 
 export default function Add() {
     const [course, setCourse] = useState<CourseProps>({id: '', title: '', body: ''});
