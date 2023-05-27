@@ -1,7 +1,9 @@
+import Modal from "@/components/Modal";
+
 export default function Signup () {
     return (
-        <>
-        <h1>signup</h1>
-        </>
+        <Modal>
+            <h1>signup</h1>
+        </Modal>
     )
 }

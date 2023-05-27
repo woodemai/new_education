@@ -16,7 +16,7 @@ a {
 header {
     padding: 20px;
     background-color: hsla(0, 5%, 100%, .5);
-    backdrop-filter: saturate(180%) blur(3px);
+    backdrop-filter: saturate(180%) blur(4px);
     box-shadow: 0 5px 10px 10px hsla(0, 0%, 95%, .5);
     position: sticky;
     top: 0;
@@ -61,9 +61,7 @@ footer {
     padding: 20px;
     background-color: hsla(0, 5%, 100%, .5);
     backdrop-filter: saturate(180%) blur(3px);
-    box-shadow: 0 5px 10px 10px hsla(0, 0%, 95%, .5);
-    position: sticky;
-    bottom: 0;
+    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .1);
 }
 
 footer nav {
@@ -89,6 +87,8 @@ footer a:hover {
 
 /* main */
 main {
+    text-align: left;
+    margin: 0 auto;
     padding: 20px 0;
     min-height: 100vh;
     max-width: min(800px, 100vw);
@@ -96,5 +96,5 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }
