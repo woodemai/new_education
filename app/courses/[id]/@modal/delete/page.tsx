@@ -3,8 +3,8 @@ import Modal from "@/components/Modal";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {CourseProps} from "@/app/courses/page";
 import styles from '../../../../../styles/utils.module.css'
+import {CourseProps} from "@/lib/interfaces";
 
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;

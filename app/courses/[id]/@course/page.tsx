@@ -1,8 +1,8 @@
 'use client'
 import ReactMarkdown from "react-markdown";
 import {useEffect, useState} from "react";
-import {CourseProps} from "@/app/courses/page";
 import CourseLoad from "@/components/loading/CourseLoad";
+import {CourseProps} from "@/lib/interfaces";
 
 export default function Course({params}: { params: { id: string } }) {
     const {id} = params;

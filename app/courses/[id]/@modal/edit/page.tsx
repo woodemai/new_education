@@ -4,7 +4,7 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {CourseProps} from "@/app/courses/page";
+import {CourseProps} from "@/lib/interfaces";
 
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
