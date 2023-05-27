@@ -1,4 +1,4 @@
-import {CourseProps} from "@/app/courses/page";
+import {CourseProps} from "@/lib/interfaces";
 
 export default async function generateStaticProps(): Promise<void[]> {
     const courses = await fetch(`/api/course/courses`, {
