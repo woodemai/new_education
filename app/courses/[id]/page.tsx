@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 import styles from '../../../styles/utils.module.css'
 import {useRouter} from "next/navigation";
 
-async function generateStaticProps(): Promise<void[]> {
+export async function generateStaticProps(): Promise<void[]> {
     const courses = await fetch(`/api/courses`, {
         method: "GET",
         headers: {
@@ -45,20 +45,14 @@ export default function CoursePage({params}: { params: { id: string } }) {
             </>
         )
     }
-    const handleRemove = async () => {
-        await fetch(`/api/${id}`, {
-            method: "DELETE"
-        });
-        router.refresh()
-        await router.push('/courses')
-    }
     return (
         <>
             <h2>{course.title}</h2>
             <ReactMarkdown>{course.body}</ReactMarkdown>
             <div className={styles.list}>
-                <Button>Edit</Button>
-                <Button onClick={handleRemove}>Delete</Button>
+                <Button onClick={() => router.push(`/courses/${id}/edit`)}>Edit</Button>
+                <Button onClick={() => router.push(`/courses/${id}/delete`)}>Delete</Button>
+                <Button onClick={() => router.push('/courses')}>Go back</Button>
             </div>
         </>
     )
