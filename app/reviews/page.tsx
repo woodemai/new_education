@@ -17,8 +17,7 @@ export default async function ReviewsPage() {
     return (
         <>
             <List items={reviews}
-                  element={(review: ReviewProps) => <Review name={review.title} description={review.body}
-                                                            userId={review.userId}/>} heading={'All reviews'}/>
+                  element={(review: ReviewProps) => <Review name={review.title} description={review.body}/>} heading={'All reviews'}/>
         </>
     )
 }
