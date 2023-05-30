@@ -7,6 +7,7 @@ import {Review} from "@prisma/client";
 import ReviewBlock from "@/components/ReviewBlock";
 import {getAll} from "@/app/reviews/getAll";
 
+export const revalidate = 0;
 export default function ReviewsPage() {
     const [reviews, setReviews] = useState<Review[] | null>(null);
     const getReviews = async () => {
@@ -34,7 +35,7 @@ export default function ReviewsPage() {
     return (
         <>
             <List items={reviews}
-                  element={(review: ReviewProps) => <ReviewBlock name={review.title} description={review.body}/>}
+                  element={(review: ReviewProps) => <ReviewBlock key={review.id} name={review.title} description={review.body}/>}
                   heading={"All reviews"}/>
         </>
     );

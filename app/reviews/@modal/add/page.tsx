@@ -12,7 +12,6 @@ export default function AddReviewPage() {
     const router = useRouter()
     const handleAdd = async () => {
         await addReview(review)
-        router.refresh()
         router.back()
     };
     const [heading, setHeading] = useState<string>('');
