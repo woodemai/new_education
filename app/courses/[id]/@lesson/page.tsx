@@ -4,21 +4,21 @@ import List from "@/components/List";
 import Item from "@/components/Item";
 import CourseLoad from "@/components/loading/CourseLoad";
 import {LessonProps} from "@/lib/interfaces";
+import {Lesson} from "@prisma/client";
+import {getAll} from "@/app/courses/[id]/@lesson/getAll";
 
+const renderItem = (lesson: Lesson) => {
+    return (
+        <Item key={lesson.id} name={lesson.title} description={lesson.body}
+              href={`/courses/${lesson.courseId}/lessons/${lesson.id}`}/>
+    )
+}
 export default function Lessons({params}: { params: { id: string } }) {
     const {id} = params;
     const [lessons, setLessons] = useState<LessonProps[]>();
     useEffect(() => {
         const getLessons = async () => {
-            const response = await fetch(`/api/lesson/all/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch post ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setLessons(data);
+            setLessons(await getAll(id))
         }
         if (id) {
             getLessons()
@@ -32,8 +32,6 @@ export default function Lessons({params}: { params: { id: string } }) {
             <h3>No lessons were found</h3>
         </div>
     }
-    return <List items={lessons} element={(lesson: LessonProps) => <Item name={lesson.title} description={lesson.body}
-                                                                         href={`/courses/${lesson.courseId}/lessons/${lesson.id}`}/>}
-                 heading={'Lessons'}/>
+    return <List items={lessons} element={(lesson: LessonProps) => renderItem(lesson)} heading={'Lessons'}/>
 
 }

@@ -11,6 +11,7 @@
     transition: .1s linear;
 }
 .button:hover {
+    transform: scale(102%);
     box-shadow: 0 0 4px 4px hsla(0, 0%, 80%, 0.2);
     background: white;
     color: black;
