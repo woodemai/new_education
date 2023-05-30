@@ -3,17 +3,25 @@ import List from "@/components/List";
 import prisma from "@/lib/prisma";
 import Button from "@/components/Button";
 import {Course} from "@prisma/client";
+import Modal from "@/components/Modal";
 
-async function getCourses ():Promise<Course[]> {
-    return prisma.course.findMany({orderBy: {
-        title: 'desc'
-        }});
+async function getCourses(): Promise<Course[]> {
+    return prisma.course.findMany({
+        orderBy: {
+            title: 'desc'
+        }
+    });
 }
-export default async function Courses () {
+
+export default async function Courses() {
     const courses = await getCourses();
     if (!courses.length) {
         return (
-            <h3>No courses were found</h3>
+            <Modal>
+                <h3>No courses were found</h3>
+                <Button href={'/courses/add'}>Add course</Button>
+            </Modal>
+
         )
     }
     return (

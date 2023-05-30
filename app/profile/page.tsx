@@ -1,6 +1,5 @@
 'use client'
 import {signIn, useSession} from "next-auth/react";
-import Image from "next/image";
 import Button from "@/components/Button";
 
 export default async function Profile() {
@@ -25,9 +24,7 @@ export default async function Profile() {
             <h1>{session.data?.user?.name}</h1>
             <span>Email</span>
             <p>{session.data?.user?.email}</p>
-            <Image src={String(session.data?.user?.image)} alt={'avatar'} width={200} height={200}
-                   loading="lazy" placeholder={"blur"}
-            />
+            <img src={String(session.data?.user?.image)} alt={'avatar'} width={200} height={200}/>
         </>
     );
 }
