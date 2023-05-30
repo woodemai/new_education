@@ -1,23 +1,41 @@
-import prisma from "@/lib/prisma";
+"use client";
 import List from "@/components/List";
 import {ReviewProps} from "@/lib/interfaces";
-import Review from "@/components/Review";
 import Button from "@/components/Button";
+import {useEffect, useState} from "react";
+import {Review} from "@prisma/client";
+import ReviewBlock from "@/components/ReviewBlock";
+import {getAll} from "@/app/reviews/getAll";
 
-export default async function ReviewsPage() {
-    const reviews = await prisma.review.findMany();
+export default function ReviewsPage() {
+    const [reviews, setReviews] = useState<Review[] | null>(null);
+    const getReviews = async () => {
+        const reviews = await getAll();
+        setReviews(reviews);
+    };
+    useEffect(() => {
+        getReviews();
+    }, []);
+    if (reviews == null) {
+        return (
+            <>
+                <h2>Loading...</h2>
+            </>
+        );
+    }
     if (!reviews.length) {
         return (
             <>
                 <h2>No reviews yet</h2>
-                <Button href={'/reviews/add'}>Add new review</Button>
+                <Button href={"/reviews/add"}>Add new review</Button>
             </>
-        )
+        );
     }
     return (
         <>
             <List items={reviews}
-                  element={(review: ReviewProps) => <Review name={review.title} description={review.body}/>} heading={'All reviews'}/>
+                  element={(review: ReviewProps) => <ReviewBlock name={review.title} description={review.body}/>}
+                  heading={"All reviews"}/>
         </>
-    )
+    );
 }
