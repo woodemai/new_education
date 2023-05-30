@@ -21,8 +21,6 @@ J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 D
 app/reviews/page.tsx,b\f\bffc2f4571a133ad68b4fc5027faa0eba2df54de
-A
-lib/interfaces.ts,d\3\d3e31613353bac39cc95b748d047a25d4bf76816
 S
 #app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 >

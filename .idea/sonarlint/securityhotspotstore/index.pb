@@ -23,8 +23,6 @@ E
 app/reviews/getAll.ts,d\8\d845b0f57977e586e28c4cb1c3fde91a58689eb6
 D
 app/reviews/page.tsx,b\f\bffc2f4571a133ad68b4fc5027faa0eba2df54de
-A
-lib/interfaces.ts,d\3\d3e31613353bac39cc95b748d047a25d4bf76816
 S
 #app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 >
