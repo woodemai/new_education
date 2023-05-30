@@ -6,9 +6,12 @@ import {useEffect, useState} from "react";
 import {ReviewProps} from "@/lib/interfaces";
 import {useRouter} from "next/navigation";
 import addReview from "@/app/reviews/@modal/add/add";
+import {useSession} from "next-auth/react";
 
 export default function AddReviewPage() {
-    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: ''});
+    const {data: session} = useSession()
+    console.log(session)
+    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: '', userId: ''});
     const router = useRouter()
     const handleAdd = async () => {
         await addReview(review)
