@@ -21,7 +21,6 @@ export default function Add() {
                 body,
             })
         });
-        router.refresh()
         router.back()
     };
     const [heading, setHeading] = useState<string>('');
