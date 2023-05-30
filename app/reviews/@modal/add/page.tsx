@@ -9,9 +9,9 @@ import addReview from "@/app/reviews/@modal/add/add";
 import {signIn, useSession} from "next-auth/react";
 
 export default function AddReviewPage() {
-    const {data: session} = useSession()
+    const session = useSession()
     console.log(session)
-    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: '', userId: String(session?.user?.name)});
+    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: '', userId: String(session.data?.user?.name)});
     const router = useRouter()
     const handleAdd = async () => {
         await addReview(review)
@@ -25,7 +25,14 @@ export default function AddReviewPage() {
             setHeading('');
         }
     }, [review.title]);
-    if (!session) {
+    if (session.status === 'loading') {
+        return (
+            <>
+            <h1>Loading...</h1>
+            </>
+        )
+    }
+    if (session.status === 'unauthenticated') {
         return (
             <>
                 <h1>You need to be authenticated to view this page</h1>
