@@ -11,11 +11,5 @@ const handler = NextAuth({
             clientSecret: String(process.env.YANDEX_CLIENT_SECRET),
         })
     ],
-    callbacks: {
-        redirect({baseUrl}) {
-            return baseUrl
-        }
-
-    },
 })
 export {handler as GET, handler as POST}
