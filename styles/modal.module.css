@@ -6,8 +6,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: saturate(180%) blur(6px);
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: saturate(180%) blur(2px);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,7 +18,7 @@
     width: min(100vw, 800px);
     background: white;
     padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px 10px hsla(0, 0%, 50%, .2);
     border-radius: 8px;
     display: flex;

@@ -16,6 +16,7 @@
 
 .item:hover {
     box-shadow: 0 0 4px 4px hsla(0, 0%, 50%, 0.5);
+    transform: scale(101%);
     background: black;
     color: white;
 }

@@ -4,14 +4,14 @@
     padding: 10px 20px;
     background: black;
     color: white;
-    border: 1px solid rgba(0,0,0, 0.2);
     border-radius: 4px;
+    border: 1px solid #ddd;
     cursor: pointer;
 
     transition: .1s linear;
 }
 .button:hover {
-    box-shadow: 0 0 4px 4px hsla(0, 0%, 80%, 0.5);
+    box-shadow: 0 0 4px 4px hsla(0, 0%, 80%, 0.2);
     background: white;
     color: black;
 }

@@ -1,13 +1,13 @@
 'use client'
 import Link from "next/link";
-import {useSession} from 'next-auth/react'
+import {signIn, signOut, useSession} from 'next-auth/react'
+import Button from "@/components/Button";
 
 export default function Header() {
     const {data: session} = useSession()
-    console.log(session)
     const authLink = session
-        ? <Link href="/api/auth/signout"> Logout </Link>
-        : <Link href="/api/auth/signin"> Login </Link>
+        ? <Button type={'button'} onClick={() => signOut()}>Logout</Button>
+        : <Button type={'button'} onClick={() => signIn()}>Login</Button>
 
     return (
         <header>
@@ -16,6 +16,7 @@ export default function Header() {
                 <ul>
                     <li><Link href={'/'}>Home</Link></li>
                     <li><Link href={'/courses'}>Courses</Link></li>
+                    <li><Link href={'/reviews'}>Reviews</Link></li>
                     <li><Link href={'/profile'}>Profile</Link></li>
                     <li><Link href={'/courses'}>Settings</Link></li>
                     <li>{authLink}</li>

@@ -10,3 +10,9 @@ export interface LessonProps {
     title: string;
     body: string;
 }
+
+export interface ReviewProps {
+    id: string;
+    title: string;
+    body: string;
+}

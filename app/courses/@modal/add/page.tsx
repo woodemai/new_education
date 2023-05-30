@@ -16,12 +16,10 @@ export default function Add() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(
-                {
-                    title,
-                    body,
-                }
-            )
+            body: JSON.stringify({
+                title,
+                body,
+            })
         });
         router.refresh()
         router.back()

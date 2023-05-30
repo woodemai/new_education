@@ -1,14 +1,9 @@
-import NextAuth from "next-auth";
-import YandexProvider from "next-auth/providers/yandex";
 import {PrismaAdapter} from "@next-auth/prisma-adapter";
 import prisma from "@/lib/prisma";
-import {NextApiHandler} from "next";
+import YandexProvider from "next-auth/providers/yandex";
+import NextAuth from "next-auth";
 
-const authHandler: NextApiHandler = (req, res) =>
-    NextAuth(req, res, handler);
-export default authHandler;
-
-const handler = {
+const handler = NextAuth({
     adapter: PrismaAdapter(prisma),
     providers: [
         YandexProvider({
@@ -16,4 +11,11 @@ const handler = {
             clientSecret: String(process.env.YANDEX_CLIENT_SECRET),
         })
     ],
-}
+    callbacks: {
+        redirect({baseUrl}) {
+            return baseUrl
+        }
+
+    },
+})
+export {handler as GET, handler as POST}
