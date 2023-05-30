@@ -25,7 +25,9 @@ export default async function Profile() {
             <h1>{session.data?.user?.name}</h1>
             <span>Email</span>
             <p>{session.data?.user?.email}</p>
-            <Image src={String(session.data?.user?.image)} alt={'avatar'} width={200} height={200}/>
+            <Image src={String(session.data?.user?.image)} alt={'avatar'} width={200} height={200}
+                   loading="lazy" placeholder={"blur"}
+            />
         </>
     );
 }
