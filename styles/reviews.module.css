@@ -31,3 +31,7 @@
     box-shadow: 0 0 4px 4px hsla(0, 0%, 50%, 0.5);
     transform: scale(100.1%);
 }
+.author {
+    text-align: right;
+    font-size: smaller;
+}

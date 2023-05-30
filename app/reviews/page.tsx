@@ -35,7 +35,7 @@ export default function ReviewsPage() {
     return (
         <>
             <List items={reviews}
-                  element={(review: ReviewProps) => <ReviewBlock key={review.id} name={review.title} description={review.body}/>}
+                  element={(review: ReviewProps) => <ReviewBlock key={review.id} name={review.author} description={review.body} author={review.author}/>}
                   heading={"All reviews"}/>
         </>
     );

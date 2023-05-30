@@ -15,8 +15,6 @@ Q
 !app/courses/[id]/@lesson/page.tsx,7\a\7ac086bedc2085e4d322e224e6a664fc125d6e88
 O
 app/courses/[id]/staticProps.ts,1\0\109621fbb2d15a48edc53c7d4eb7f5f7857ffbaa
-J
-components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 >
 app/layout.tsx,e\e\ee80c90a95b380fdaa8bc6ba2190fbb3fdc30bb0
 E
