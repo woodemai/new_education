@@ -7,8 +7,6 @@ G
 pages/api/lesson/add.ts,8\4\8415636755931a9c157db1592c7f6b281d35889d
 H
 pages/api/course/[id].ts,8\d\8d8ae6b8f0dbd2be070158d76927eb2837718b5e
-D
-app/courses/page.tsx,f\8\f8d6ea75cdf4922126b16037d4ef0e09054fc376
 I
 app/courses/[id]/page.tsx,e\6\e646e2203c574fe656447efe89061302d5cc160b
 K
@@ -21,9 +19,5 @@ J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 E
 app/reviews/getAll.ts,d\8\d845b0f57977e586e28c4cb1c3fde91a58689eb6
-D
-app/reviews/page.tsx,b\f\bffc2f4571a133ad68b4fc5027faa0eba2df54de
-S
-#app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 >
 app/layout.tsx,e\e\ee80c90a95b380fdaa8bc6ba2190fbb3fdc30bb0

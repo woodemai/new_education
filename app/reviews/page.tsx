@@ -1,4 +1,4 @@
-"use client";
+    "use client";
 import List from "@/components/List";
 import {ReviewProps} from "@/lib/interfaces";
 import Button from "@/components/Button";

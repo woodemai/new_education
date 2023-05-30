@@ -11,6 +11,11 @@ async function getCourses ():Promise<Course[]> {
 }
 export default async function Courses () {
     const courses = await getCourses();
+    if (!courses.length) {
+        return (
+            <h3>No courses were found</h3>
+        )
+    }
     return (
         <>
             <h1>Courses</h1>

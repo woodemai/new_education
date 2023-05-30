@@ -27,17 +27,17 @@ export default function AddReviewPage() {
     }, [review.title]);
     if (session.status === 'loading') {
         return (
-            <>
+            <Modal>
             <h1>Loading...</h1>
-            </>
+            </Modal>
         )
     }
     if (session.status === 'unauthenticated') {
         return (
-            <>
+            <Modal>
                 <h1>You need to be authenticated to view this page</h1>
                 <Button type={'button'} onClick={() => signIn()}>Login</Button>
-            </>
+            </Modal>
         )
     }
     return (
