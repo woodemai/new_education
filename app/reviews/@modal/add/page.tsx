@@ -10,8 +10,7 @@ import {signIn, useSession} from "next-auth/react";
 
 export default function AddReviewPage() {
     const session = useSession()
-    console.log(session)
-    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: '', userId: String(session.data?.user?.name)});
+    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: '', author: String(session.data?.user?.name)});
     const router = useRouter()
     const handleAdd = async () => {
         await addReview(review)
