@@ -49,8 +49,8 @@ export default function EditPage({params}: { params: { id: string } }) {
                 }
             )
         });
-        await router.back()
-        await router.refresh()
+        router.back()
+        router.refresh()
     };
     return (
         <Modal>

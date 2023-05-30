@@ -1,6 +1,5 @@
-    "use client";
+"use client";
 import List from "@/components/List";
-import {ReviewProps} from "@/lib/interfaces";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {Review} from "@prisma/client";
@@ -8,6 +7,9 @@ import ReviewBlock from "@/components/ReviewBlock";
 import {getAll} from "@/app/reviews/getAll";
 
 export const revalidate = 0;
+const renderReview = (review:Review) => {
+    return <ReviewBlock review={review} key={review.id}/>
+}
 export default function ReviewsPage() {
     const [reviews, setReviews] = useState<Review[] | null>(null);
     const getReviews = async () => {
@@ -35,7 +37,7 @@ export default function ReviewsPage() {
     return (
         <>
             <List items={reviews}
-                  element={(review: ReviewProps) => <ReviewBlock key={review.id} name={review.author} description={review.body} author={review.author}/>}
+                  element={(review: Review) => renderReview(review)}
                   heading={"All reviews"}/>
         </>
     );

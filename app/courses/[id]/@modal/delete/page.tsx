@@ -39,7 +39,7 @@ export default function EditPage({params}: { params: { id: string } }) {
             method: "DELETE"
         });
         router.refresh()
-        await router.push('/courses')
+        router.push('/courses')
     }
     return (
         <Modal>

@@ -37,8 +37,8 @@ export default function AddLessonPage({params}: { params: { id: string } }) {
                     }
                 )
             });
-            await router.back()
-            await router.refresh()
+            router.back()
+            router.refresh()
         } else {
             alert("Title and Description should not be empty!")
         }

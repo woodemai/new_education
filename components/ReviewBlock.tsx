@@ -1,20 +1,17 @@
 import React, {FC} from 'react';
 import ReactMarkdown from "react-markdown";
 import styles from '../styles/reviews.module.css'
+import {Review} from "@prisma/client";
 
-interface ElementProps {
-    author: string
-    name: string;
-    description: string;
-}
 
-const Item: FC<ElementProps> = ({author, name, description}) => {
+
+const Item: FC<{review: Review }> = ({review}) => {
     return (
         <div className={styles.item}>
             <div className={styles.item__inner}>
-                <h3>{name}</h3>
-                <ReactMarkdown>{description}</ReactMarkdown>
-                <ReactMarkdown className={styles.author}>{author}</ReactMarkdown>
+                <h3>{review.title}</h3>
+                <ReactMarkdown>{review.body}</ReactMarkdown>
+                <ReactMarkdown className={styles.author}>{review.author}</ReactMarkdown>
             </div>
         </div>
     );
