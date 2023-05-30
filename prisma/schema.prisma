@@ -15,7 +15,7 @@ datasource db {
 model Course {
   id        String   @id @default(cuid())
   title     String
-  body      String?
+  body      String
   published Boolean  @default(false)
   lessons   Lesson[]
   User      User[]
@@ -24,10 +24,10 @@ model Course {
 model Review {
   id        String  @id @default(cuid())
   title     String
-  body      String?
+  body      String
   published Boolean @default(false)
-  User      User?   @relation(fields: [userId], references: [id])
-  userId    String?
+  User      User    @relation(fields: [userId], references: [id])
+  userId    String
 }
 
 model Lesson {

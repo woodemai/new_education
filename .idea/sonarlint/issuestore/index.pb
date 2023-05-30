@@ -1,0 +1,33 @@
+
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+4
+.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+K
+pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
+G
+pages/api/lesson/add.ts,8\4\8415636755931a9c157db1592c7f6b281d35889d
+H
+pages/api/course/[id].ts,8\d\8d8ae6b8f0dbd2be070158d76927eb2837718b5e
+D
+app/courses/page.tsx,f\8\f8d6ea75cdf4922126b16037d4ef0e09054fc376
+K
+app/courses/[id]/layout.tsx,5\4\540445f2b4b8fe42348d2276410230ac5719afd2
+I
+app/courses/[id]/page.tsx,e\6\e646e2203c574fe656447efe89061302d5cc160b
+Q
+!app/courses/[id]/@lesson/page.tsx,7\a\7ac086bedc2085e4d322e224e6a664fc125d6e88
+O
+app/courses/[id]/staticProps.ts,1\0\109621fbb2d15a48edc53c7d4eb7f5f7857ffbaa
+J
+components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
+D
+app/reviews/page.tsx,b\f\bffc2f4571a133ad68b4fc5027faa0eba2df54de
+A
+lib/interfaces.ts,d\3\d3e31613353bac39cc95b748d047a25d4bf76816
+S
+#app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
+>
+app/layout.tsx,e\e\ee80c90a95b380fdaa8bc6ba2190fbb3fdc30bb0
+E
+app/reviews/getAll.ts,d\8\d845b0f57977e586e28c4cb1c3fde91a58689eb6
