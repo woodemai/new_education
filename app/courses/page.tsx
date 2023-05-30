@@ -21,11 +21,7 @@ export default function Courses() {
     }, []);
 
     if (!courses) {
-        return (
-            <>
-            <h1>Can't find courses :(</h1>
-            </>
-        );
+        return <h1>Loading...</h1>
     }
     if (!courses.length) {
         return (
