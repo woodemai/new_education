@@ -4,7 +4,6 @@ import Button from "@/components/Button";
 import styles from '../../styles/profile.module.css'
 import ComponentLoad from "@/components/loading/ComponentLoad";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
 
 export default async function Profile() {
     const session = useSession()
@@ -28,7 +27,7 @@ export default async function Profile() {
         const name = user.name ? user.name : "Can't load your name";
         return (
             <div className={styles.profile}>
-                <Image src={image} alt={'avatar'} width={200} height={200}/>
+                <img src={image} alt={'avatar'} width={200} height={200}/>
                 <ReactMarkdown>{name}</ReactMarkdown>
                 <span>Email</span>
                 <ReactMarkdown>{email}</ReactMarkdown>

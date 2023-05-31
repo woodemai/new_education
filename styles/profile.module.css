@@ -5,6 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    width: 100%;
 }
 .profile img {
     border-radius: 100%;
