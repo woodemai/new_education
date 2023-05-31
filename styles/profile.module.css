@@ -1,7 +1,7 @@
 .profile {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
@@ -20,4 +20,11 @@
 }
 .email span {
     margin-right: 5px;
+}
+.email a {
+    color: #333;
+}
+.email a:hover {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    color: black;
 }
