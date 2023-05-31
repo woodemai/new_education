@@ -5,6 +5,8 @@ import {useEffect, useState} from "react";
 import {Review} from "@prisma/client";
 import ReviewBlock from "@/components/ReviewBlock";
 import {getAll} from "@/app/reviews/getAll";
+import ComponentLoad from "@/components/loading/ComponentLoad";
+import HeadingLoad from "@/components/loading/HeadingLoad";
 
 export const revalidate = 0;
 const renderReview = (review:Review) => {
@@ -22,7 +24,18 @@ export default function ReviewsPage() {
     if (reviews == null) {
         return (
             <>
-                <h2>Loading...</h2>
+                <HeadingLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
+                <ComponentLoad/>
             </>
         );
     }

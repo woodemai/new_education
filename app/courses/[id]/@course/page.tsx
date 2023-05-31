@@ -1,8 +1,9 @@
 'use client'
 import ReactMarkdown from "react-markdown";
 import {useEffect, useState} from "react";
-import CourseLoad from "@/components/loading/CourseLoad";
 import {CourseProps} from "@/lib/interfaces";
+import HeadingLoad from "@/components/loading/HeadingLoad";
+import Heading2Load from "@/components/loading/Heading2Load";
 
 export default function Course({params}: { params: { id: string } }) {
     const {id} = params;
@@ -26,7 +27,12 @@ export default function Course({params}: { params: { id: string } }) {
         }
     }, [id]);
     if (!course) {
-        return <CourseLoad/>
+        return (
+            <>
+                <HeadingLoad/>
+                <Heading2Load/>
+            </>
+        )
     }
     return (
         <>

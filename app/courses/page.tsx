@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import {Course} from "@prisma/client";
 import {useEffect, useState} from "react";
 import {getAll} from "@/app/courses/getAll";
+import CoursesPageLoader from "@/components/loading/courses/CoursesPageLoader";
 const renderItem = (course: Course) => {
     return (
         <Item key={course.id} name={course.title} description={course.body}
@@ -21,7 +22,7 @@ export default function Courses() {
     }, []);
 
     if (!courses) {
-        return <h1>Loading...</h1>
+        return <CoursesPageLoader/>
     }
     if (!courses.length) {
         return (

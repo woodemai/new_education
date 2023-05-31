@@ -7,6 +7,7 @@ import {ReviewProps} from "@/lib/interfaces";
 import {useRouter} from "next/navigation";
 import addReview from "@/app/reviews/@modal/add/add";
 import {signIn, useSession} from "next-auth/react";
+import CourseLoad from "@/components/loading/CourseLoad";
 
 export default function AddReviewPage() {
     const session = useSession()
@@ -27,7 +28,7 @@ export default function AddReviewPage() {
     if (session.status === 'loading') {
         return (
             <Modal>
-            <h1>Loading...</h1>
+                <CourseLoad/>
             </Modal>
         )
     }
