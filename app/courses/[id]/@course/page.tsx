@@ -1,14 +1,13 @@
 'use client'
 import ReactMarkdown from "react-markdown";
 import {useEffect, useState} from "react";
-import CourseLoad from "@/components/loading/CourseLoad";
-import {CourseProps} from "@/lib/interfaces";
+import HeadingLoad from "@/components/loading/HeadingLoad";
+import Heading2Load from "@/components/loading/Heading2Load";
+import {Course} from "@prisma/client";
 
-export default function Course({params}: { params: { id: string } }) {
+export default function CoursePage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [course, setCourse] = useState<CourseProps>(
-        {id: '', title: '', body: ''}
-    );
+    const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false});
     useEffect(() => {
         const getCourse = async () => {
             const response = await fetch(`/api/course/${id}`, {
@@ -26,7 +25,12 @@ export default function Course({params}: { params: { id: string } }) {
         }
     }, [id]);
     if (!course) {
-        return <CourseLoad/>
+        return (
+            <>
+                <HeadingLoad/>
+                <Heading2Load/>
+            </>
+        )
     }
     return (
         <>

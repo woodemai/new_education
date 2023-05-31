@@ -4,10 +4,10 @@ import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import Input from "@/components/InputC";
 import {useRouter} from "next/navigation";
-import {CourseProps} from "@/lib/interfaces";
+import {Course} from "@prisma/client";
 
 export default function Add() {
-    const [course, setCourse] = useState<CourseProps>({id: '', title: '', body: ''});
+    const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false});
     const router = useRouter()
     const handleAdd = async () => {
         const {title, body} = course

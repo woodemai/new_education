@@ -3,14 +3,21 @@ import Modal from "@/components/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
-import {ReviewProps} from "@/lib/interfaces";
 import {useRouter} from "next/navigation";
 import addReview from "@/app/reviews/@modal/add/add";
 import {signIn, useSession} from "next-auth/react";
+import CourseLoad from "@/components/loading/CourseLoad";
+import {Review} from "@prisma/client";
 
 export default function AddReviewPage() {
     const session = useSession()
-    const [review, setReview] = useState<ReviewProps>({id: '', title: '', body: '', author: String(session.data?.user?.name)});
+    const [review, setReview] = useState<Review>({
+        id: '',
+        title: '',
+        body: '',
+        author: String(session.data?.user?.name),
+        published: false
+    });
     const router = useRouter()
     const handleAdd = async () => {
         await addReview(review)
@@ -27,7 +34,7 @@ export default function AddReviewPage() {
     if (session.status === 'loading') {
         return (
             <Modal>
-            <h1>Loading...</h1>
+                <CourseLoad/>
             </Modal>
         )
     }

@@ -1,4 +1,5 @@
-import {CourseProps} from "@/lib/interfaces";
+import {Course} from "@prisma/client";
+
 
 export default async function generateStaticProps(): Promise<void[]> {
     const courses = await fetch(`/api/course/courses`, {
@@ -6,7 +7,7 @@ export default async function generateStaticProps(): Promise<void[]> {
         headers: {
             "Content-Type": "application/json",
         },
-    }).then((res) => res.json()).then((res: CourseProps[]) => res);
+    }).then((res) => res.json()).then((res: Course[]) => res);
     return courses.map((course) => {
         course.id
     });
