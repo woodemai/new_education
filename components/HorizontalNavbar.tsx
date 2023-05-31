@@ -19,7 +19,7 @@ export default function HorizontalNavbar({showNav}: { showNav: boolean }) {
     return (
         <nav className="verticalNav">
             <ul>
-                <li><Link href={"/"}>Home</Link></li>
+                <li><Link onClick={() => setShowNavbar(!showNavbar)} href={"/"}>Home</Link></li>
                 <li><Link onClick={() => setShowNavbar(!showNavbar)} href={"/courses"}>Courses</Link></li>
                 <li><Link onClick={() => setShowNavbar(!showNavbar)} href={"/reviews"}>Reviews</Link></li>
                 <li><Link onClick={() => setShowNavbar(!showNavbar)} href={"/profile"}>Profile</Link></li>
