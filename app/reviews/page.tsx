@@ -2,13 +2,11 @@
 import List from "@/components/List";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
-import {Review} from "@prisma/client";
 import ReviewBlock from "@/components/ReviewBlock";
 import {getAll} from "@/app/reviews/getAll";
-import ComponentLoad from "@/components/loading/ComponentLoad";
-import HeadingLoad from "@/components/loading/HeadingLoad";
+import ListLoader from "@/components/loading/reviews/ListLoader";
+import {Review} from "@prisma/client";
 
-export const revalidate = 0;
 const renderReview = (review:Review) => {
     return <ReviewBlock review={review} key={review.id}/>
 }
@@ -19,24 +17,13 @@ export default function ReviewsPage() {
         setReviews(reviews);
     };
     useEffect(() => {
-        getReviews();
+        getReviews().then(res => {
+            console.log(res)
+        });
     }, []);
     if (reviews == null) {
         return (
-            <>
-                <HeadingLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-                <ComponentLoad/>
-            </>
+            <ListLoader/>
         );
     }
     if (!reviews.length) {

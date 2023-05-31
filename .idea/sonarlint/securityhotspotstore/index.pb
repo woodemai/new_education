@@ -21,8 +21,6 @@ F
 styles/list.module.css,7\3\732e3e444261fa9bf2b78630fff8910376473a5f
 I
 styles/loading.module.css,1\c\1cebb0b391eafbb65eb0c1b9307270b3aaed18bf
-D
-prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 G
 pages/api/lesson/add.ts,8\4\8415636755931a9c157db1592c7f6b281d35889d
 J
@@ -49,8 +47,6 @@ K
 app/courses/[id]/layout.tsx,5\4\540445f2b4b8fe42348d2276410230ac5719afd2
 E
 app/reviews/getAll.ts,d\8\d845b0f57977e586e28c4cb1c3fde91a58689eb6
-J
-components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 S
 #app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 G
@@ -73,8 +69,6 @@ N
 .eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 =
 tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
-A
-package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :
