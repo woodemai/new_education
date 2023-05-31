@@ -4,11 +4,11 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {LessonProps} from "@/lib/interfaces";
+import {Lesson} from "@prisma/client";
 
 export default function AddLessonPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [lesson, setLesson] = useState<LessonProps>(
+    const [lesson, setLesson] = useState<Lesson>(
         {id: '', courseId: '', title: '', body: ''}
     );
     const [heading, setHeading] = useState<string>('');
@@ -38,7 +38,6 @@ export default function AddLessonPage({params}: { params: { id: string } }) {
                 )
             });
             router.back()
-            router.refresh()
         } else {
             alert("Title and Description should not be empty!")
         }

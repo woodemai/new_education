@@ -4,12 +4,12 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {CourseProps} from "@/lib/interfaces";
 import CourseLoad from "@/components/loading/CourseLoad";
+import {Course} from "@prisma/client";
 
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [course, setCourse] = useState<CourseProps | null>();
+    const [course, setCourse] = useState<Course | null>();
     const router = useRouter()
     useEffect(() => {
         const getData = async () => {
