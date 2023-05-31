@@ -123,6 +123,7 @@ footer {
 }
 
 footer nav {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
