@@ -12,7 +12,6 @@ export default function Header() {
     const authLink = session
         ? <Button type={'button'} onClick={() => signOut()}>Logout</Button>
         : <Button type={'button'} onClick={() => signIn()}>Login</Button>
-
     return (
         <>
             <header>
@@ -33,7 +32,7 @@ export default function Header() {
                     </ul>
                 </nav>
             </header>
-            <HorizontalNavbar showNavbar={showNavbar}/>
+            <HorizontalNavbar showNav={showNavbar}/>
         </>
     )
 }
