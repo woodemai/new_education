@@ -21,7 +21,7 @@ export default function Add() {
                 body,
             })
         });
-        router.back()
+        router.push('/courses')
     };
     const [heading, setHeading] = useState<string>('');
     useEffect(() => {

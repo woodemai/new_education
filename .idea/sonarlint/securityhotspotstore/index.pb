@@ -1,8 +1,4 @@
 
-Å
-Q.idea/sonarlint/securityhotspotstore/1/0/109621fbb2d15a48edc53c7d4eb7f5f7857ffbaa,f\1\f1b4ad9a2616e17dfb398642233642110d9e1f32
-Å
-Q.idea/sonarlint/securityhotspotstore/7/a/7ac086bedc2085e4d322e224e6a664fc125d6e88,4\6\46811005fe3e02e0bee6ec7203d3b0f6cc3138bf
 Q
 !components/loading/CourseLoad.tsx,7\6\765e195bd7b68031a76b88067e828afed80a9da5
 E
@@ -29,8 +25,6 @@ H
 pages/api/course/[id].ts,8\d\8d8ae6b8f0dbd2be070158d76927eb2837718b5e
 =
 lib/prisma.ts,9\c\9c975082331e190d75de0ffaa9d8a2aff6950f8f
-A
-lib/interfaces.ts,d\3\d3e31613353bac39cc95b748d047a25d4bf76816
 T
 $app/courses/[id]/@lesson/loading.tsx,0\6\064fd3399afd66cf76c515c6e4377c95837ecbe5
 T
@@ -51,10 +45,6 @@ S
 #app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 G
 app/courses/loading.tsx,e\f\ef5caaddb683cf35188259b745c207269a4434ea
-M
-app/reviews/@modal/add/add.ts,2\5\25fe31faed2f7455c2a4a6327ccc9a53019d0846
-O
-app/reviews/@modal/add/page.tsx,0\7\07f6d458b84dfd36d3455a4cb7774d78a63ef4c2
 F
 app/courses/layout.tsx,b\3\b3e92b52e0a5f80221ce87f1292e7c60b060ee83
 N
@@ -82,5 +72,3 @@ K
 pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
 G
 styles/modal.module.css,b\2\b25c8f79b0a1cc06ff75dc961e57fcaa9bffac1d
-O
-app/courses/@modal/add/page.tsx,3\3\331429fdeb98e7f6463716ff466c9949255d7bbb

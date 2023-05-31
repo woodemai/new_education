@@ -1,15 +1,12 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider          = "postgresql"
-  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+  url               = env("POSTGRES_PRISMA_URL")
+  directUrl         = env("POSTGRES_URL_NON_POOLING")
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model Course {
@@ -18,7 +15,7 @@ model Course {
   body      String
   published Boolean  @default(false)
   lessons   Lesson[]
-  User      User[]
+  User      User[]   @relation("CourseToUser")
 }
 
 model Review {
@@ -27,15 +24,15 @@ model Review {
   body      String
   published Boolean  @default(false)
   author    String
-  createdAt DateTime @default(now()) @db.Timestamp()
+  createdAt DateTime @default(now()) @db.Timestamp(6)
 }
 
 model Lesson {
   id       String @id @default(cuid())
   title    String
   body     String
-  Course   Course @relation(fields: [courseId], references: [id])
   courseId String
+  Course   Course @relation(fields: [courseId], references: [id])
 }
 
 model Account {
@@ -44,15 +41,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -73,7 +69,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  Course        Course[]
+  Course        Course[]  @relation("CourseToUser")
 }
 
 model VerificationToken {
