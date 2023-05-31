@@ -9,4 +9,4 @@
 ## Reporting a Vulnerability
 
 To report a vulnerabilty, please text me `n.savchenkoo73@gmail.com`
-I respond as soon as possible
+I will respond as soon as possible
