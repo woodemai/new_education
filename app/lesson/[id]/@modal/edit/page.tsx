@@ -4,16 +4,16 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {CourseProps} from "@/lib/interfaces";
+import {Lesson} from "@prisma/client";
 import CourseLoad from "@/components/loading/CourseLoad";
 
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [course, setCourse] = useState<CourseProps | null>();
+    const [lesson, setLesson] = useState<Lesson | null>();
     const router = useRouter()
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch(`/api/course/${id}`, {
+            const response = await fetch(`/api/lesson/${id}`, {
                 method: "GET"
             });
             if (!response.ok) {
@@ -21,13 +21,13 @@ export default function EditPage({params}: { params: { id: string } }) {
                 return;
             }
             const data = await response.json();
-            setCourse(data);
+            setLesson(data);
         }
         if (id) {
             getData()
         }
     }, [id]);
-    if (!course) {
+    if (!lesson) {
         return (
             <Modal>
                 <CourseLoad/>
@@ -36,8 +36,8 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleEdit = async () => {
-        const {title, body} = course;
-        await fetch(`/api/course/course`, {
+        const {title, body} = lesson;
+        await fetch(`/api/lesson/edit`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -51,15 +51,14 @@ export default function EditPage({params}: { params: { id: string } }) {
             )
         });
         router.back()
-        router.refresh()
     };
     return (
         <Modal>
             <form onSubmit={handleEdit} method={'post'}>
-                <Input title={"Name"} type={'text'} defaultValue={course.title}
-                       onChangeInput={e => setCourse({...course, title: e.target.value.trim()})}/>
-                <Input title={"Description"} type={'text'} defaultValue={course.body}
-                       onChangeArea={e => setCourse({...course, body: e.target.value.trim()})} isArea={true}/>
+                <Input title={"Name"} type={'text'} defaultValue={lesson.title}
+                       onChangeInput={e => setLesson({...lesson, title: e.target.value.trim()})}/>
+                <Input title={"Description"} type={'text'} defaultValue={lesson.body}
+                       onChangeArea={e => setLesson({...lesson, body: e.target.value.trim()})} isArea={true}/>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>
