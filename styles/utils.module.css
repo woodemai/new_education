@@ -37,3 +37,6 @@
 .container * {
     margin-top: 20px;
 }
+.page {
+    width: 100%;
+}

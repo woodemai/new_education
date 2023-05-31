@@ -11,3 +11,13 @@
     border-radius: 100%;
     box-shadow: 0 0 2px 2px hsla(0, 0%, 80%, .5);
 }
+.email {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.email span {
+    margin-right: 5px;
+}

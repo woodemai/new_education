@@ -29,8 +29,10 @@ export default async function Profile() {
             <div className={styles.profile}>
                 <img src={image} alt={'avatar'} width={200} height={200}/>
                 <ReactMarkdown>{name}</ReactMarkdown>
-                <span>Email</span>
-                <ReactMarkdown>{email}</ReactMarkdown>
+                <div className={styles.email}>
+                    <span>Email</span>
+                    <a href={`mailto: ${email}`}>{email}</a>
+                </div>
 
             </div>
         );

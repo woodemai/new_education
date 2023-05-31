@@ -21,8 +21,6 @@ F
 styles/list.module.css,7\3\732e3e444261fa9bf2b78630fff8910376473a5f
 I
 styles/loading.module.css,1\c\1cebb0b391eafbb65eb0c1b9307270b3aaed18bf
-G
-styles/utils.module.css,b\8\b80f0ef32a8af297a94ac8872f6744a1c511a296
 D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 G
@@ -39,8 +37,6 @@ T
 $app/courses/[id]/@lesson/loading.tsx,0\6\064fd3399afd66cf76c515c6e4377c95837ecbe5
 T
 $app/courses/[id]/@course/loading.tsx,3\0\30c9f20505350776dc255ed8f1a8b0f9e1921e7a
-Q
-!app/courses/[id]/@course/page.tsx,8\2\82e37c357dd513e6dcfe135001edd4a7b53dea09
 W
 'app/courses/[id]/@modal/delete/page.tsx,6\3\63cf3f788b6f310a44da93bf4e3f793bd1175ff1
 [
