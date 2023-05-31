@@ -11,6 +11,13 @@
     margin-bottom: 20px;
     position: relative;
 }
+.header ul {
+    padding: 5px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .item {
     width: 100%;

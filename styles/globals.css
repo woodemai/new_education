@@ -13,23 +13,47 @@ a {
 }
 
 /* header */
+@media screen and (max-width: 800px) {
+    .horizontalNav {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 8px;
+        cursor: pointer;
+    }
+
+    .menu div {
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+        width: 50px;
+        height: 6px;
+        border-radius: 2px;
+        background-color: black;
+        color: black;
+    }
+
+}
+
 header {
     width: 100%;
     padding: 20px;
     background-color: hsla(0, 5%, 100%, .5);
     backdrop-filter: saturate(180%) blur(4px);
-    box-shadow: 0 5px 10px 10px hsla(0, 0%, 95%, .5);
+    box-shadow: 0 5px 10px 10px hsla(0, 0%, 80%, .3);
     position: sticky;
     top: 0;
-}
-header h1 {
-    text-transform: uppercase;
-}
-header nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+header h1 {
+    text-transform: uppercase;
 }
 
 header ul {
@@ -53,6 +77,34 @@ header a {
 header a:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     color: black;
+}
+
+
+/* Vertical Navbar*/
+.verticalNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: hsla(0, 5%, 100%, .5);
+    backdrop-filter: saturate(180%) blur(4px);
+    box-shadow: 0 5px 10px 10px hsla(0, 0%, 80%, .3);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.verticalNav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.verticalNav li {
+    margin-bottom: 10px;
 }
 
 /* footer */
