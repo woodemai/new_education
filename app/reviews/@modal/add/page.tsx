@@ -9,6 +9,7 @@ import {signIn, useSession} from "next-auth/react";
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Review} from "@prisma/client";
 
+
 export default function AddReviewPage() {
     const session = useSession()
     const [review, setReview] = useState<Review>({
@@ -16,7 +17,8 @@ export default function AddReviewPage() {
         title: '',
         body: '',
         author: String(session.data?.user?.name),
-        published: false
+        published: false,
+        createdAt: Date.prototype
     });
     const router = useRouter()
     const handleAdd = async () => {
