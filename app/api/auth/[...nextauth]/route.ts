@@ -32,10 +32,6 @@ const handler = NextAuth({
     session: {
         updateAge: 60 * 60,
     },
-    pages: {
-        signIn: "/signin",
-        signOut: "signout"
-    }
 })
 
 export {handler as GET, handler as POST}
