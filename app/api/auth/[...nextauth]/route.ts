@@ -6,7 +6,7 @@ import NextAuth from "next-auth";
 
 const handler = NextAuth({
     theme: {
-        brandColor: "#fff",
+        brandColor: "#000",
         colorScheme: 'light',
         logo: "/icon.png",
     },
@@ -27,6 +27,14 @@ const handler = NextAuth({
         GitHubProvider({
             clientId: String(process.env.GITHUB_ID),
             clientSecret: String(process.env.GITHUB_SECRET),
+            style: {
+                logo: "/github.svg",
+                logoDark: "/github.svg",
+                bg: "#fff",
+                bgDark: "#fff",
+                text: "#000",
+                textDark: "#000",
+            },
         })
     ],
     session: {
