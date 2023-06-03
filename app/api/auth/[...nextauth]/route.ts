@@ -10,6 +10,14 @@ const handler = NextAuth({
         YandexProvider({
             clientId: String(process.env.YANDEX_CLIENT_ID),
             clientSecret: String(process.env.YANDEX_CLIENT_SECRET),
+            style: {
+                logo: "/yandex.svg",
+                logoDark: "/yandex.svg",
+                bg: "#fff",
+                text: "#000",
+                bgDark: "#fff",
+                textDark: "#000",
+            },
         }),
         GitHubProvider({
             clientId: String(process.env.GITHUB_ID),
