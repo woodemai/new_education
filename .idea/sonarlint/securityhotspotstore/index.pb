@@ -15,8 +15,6 @@ F
 styles/list.module.css,7\3\732e3e444261fa9bf2b78630fff8910376473a5f
 I
 styles/loading.module.css,1\c\1cebb0b391eafbb65eb0c1b9307270b3aaed18bf
-G
-pages/api/lesson/add.ts,8\4\8415636755931a9c157db1592c7f6b281d35889d
 J
 pages/api/course/course.ts,3\9\3976ab1c6ed916e12f673830104c0b088144d362
 >
@@ -96,22 +94,12 @@ Y
 )app/[lang]/courses/[id]/@lesson/getAll.ts,6\3\63a19af4bdab06103fd524293e0d2c35bf7460bb
 X
 (app/[lang]/courses/[id]/@lesson/page.tsx,d\0\d09ec8f166c5ac36b2666ae3963544a0365f66df
-U
-%app/[lang]/courses/@modal/default.tsx,4\3\4309ed46a57a40defeaa5a55983df86995d14229
-V
-&app/[lang]/courses/@modal/add/page.tsx,3\7\379e125619e66f61700605edcce337791a608484
 N
 app/[lang]/reviews/loading.tsx,3\f\3fd3f35016a2a5c41c0751e56cfbff92f3ac5d79
 L
 app/[lang]/settings/page.tsx,b\7\b7cf2795ed3c22f0138661fe1d92015572ea5508
 >
 i18n-config.ts,6\e\6e6a2d551d61334f32fe3986bd63ec69fbfc2b05
-U
-%app/[lang]/reviews/@modal/default.tsx,0\5\05669cdc0ed2b5fc534e84c3b3c7c4f92c825b77
-T
-$app/[lang]/reviews/@modal/add/add.ts,8\b\8bc20d9bce45bbe5c4127e8a094b8baad4ffe3af
-V
-&app/[lang]/reviews/@modal/add/page.tsx,c\1\c1b5686602a7d18033a3ebb683c6ea09ef5d7ee8
 I
 styles/profile.module.css,d\c\dc6fcffd7cde57d628becf0ae3df13f7a278b594
 K

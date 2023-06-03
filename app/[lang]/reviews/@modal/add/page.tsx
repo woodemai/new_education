@@ -4,7 +4,6 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import addReview from "@/app/[lang]/reviews/@modal/add/add";
 import {signIn, useSession} from "next-auth/react";
 import CourseLoad from "@/components/loading/CourseLoad";
 
@@ -16,7 +15,17 @@ export default function AddReviewPage() {
     const [title, setTitle] = useState<string>("");
     const [body, setBody] = useState<string>("");
     const handleAdd = async () => {
-        await addReview(title, body, author);
+        await fetch('/api/reviews/add', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title,
+                body,
+                author,
+            })
+        })
         router.back()
     };
     const [heading, setHeading] = useState<string>("");

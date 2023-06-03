@@ -1,7 +1,8 @@
 'use client'
 import styles from "@/styles/utils.module.css";
 import Button from "@/components/Button";
-import {signIn} from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 export default function UnAuth({dictionary}: {
     dictionary: {
@@ -9,6 +10,12 @@ export default function UnAuth({dictionary}: {
         button: string,
     }
 }) {
+    const session = useSession()
+    const router = useRouter()
+    if (session.status === 'authenticated') {
+        router.back();
+        return <></>
+    }
     return (
         <div className={styles.centered}>
             <div className={styles.centeredInner}>

@@ -15,8 +15,6 @@ F
 styles/list.module.css,7\3\732e3e444261fa9bf2b78630fff8910376473a5f
 I
 styles/loading.module.css,1\c\1cebb0b391eafbb65eb0c1b9307270b3aaed18bf
-G
-pages/api/lesson/add.ts,8\4\8415636755931a9c157db1592c7f6b281d35889d
 J
 pages/api/course/course.ts,3\9\3976ab1c6ed916e12f673830104c0b088144d362
 >
@@ -44,16 +42,10 @@ F
 next.config.js,8\1\811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
 A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
-T
-$app/[lang]/reviews/@modal/add/add.ts,8\b\8bc20d9bce45bbe5c4127e8a094b8baad4ffe3af
-U
-%app/[lang]/courses/@modal/default.tsx,4\3\4309ed46a57a40defeaa5a55983df86995d14229
 Z
 *app/[lang]/courses/[id]/@modal/default.tsx,f\1\f15fe2871d3d7697b1e98bb7883a092ac2462487
 Y
 )app/[lang]/lesson/[id]/@modal/default.tsx,4\c\4ce8f9f97f07f8736f1fb612307f1061eb61ab7c
-U
-%app/[lang]/reviews/@modal/default.tsx,0\5\05669cdc0ed2b5fc534e84c3b3c7c4f92c825b77
 Y
 )app/[lang]/courses/[id]/@lesson/getAll.ts,6\3\63a19af4bdab06103fd524293e0d2c35bf7460bb
 >
@@ -82,8 +74,6 @@ H
 app/[lang]/not-found.tsx,d\7\d78ecddae7c28d69440688f5f05d120ee586595d
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
-V
-&app/[lang]/courses/@modal/add/page.tsx,3\7\379e125619e66f61700605edcce337791a608484
 X
 (app/[lang]/courses/[id]/@course/page.tsx,9\e\9e47c1ff221ca38c43de44631dfbf67d3ff3c502
 X
@@ -102,8 +92,6 @@ P
 +app/[lang]/lesson/[id]/@modal/edit/page.tsx,0\4\0408f95981447ef5c590a9934c2f771367968230
 O
 app/[lang]/lesson/[id]/page.tsx,c\5\c57846d0ab4163690cc6d5d2f595fd6871b9a16c
-V
-&app/[lang]/reviews/@modal/add/page.tsx,c\1\c1b5686602a7d18033a3ebb683c6ea09ef5d7ee8
 L
 app/[lang]/settings/page.tsx,b\7\b7cf2795ed3c22f0138661fe1d92015572ea5508
 Z
