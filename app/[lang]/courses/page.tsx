@@ -4,7 +4,6 @@ import List from "@/components/List";
 import Button from "@/components/Button";
 import {Course} from "@prisma/client";
 import {useEffect, useState} from "react";
-import {getAll} from "@/app/[lang]/courses/getAll";
 import CoursesPageLoader from "@/components/loading/courses/CoursesPageLoader";
 
 const renderItem = (course: Course) => {
@@ -14,9 +13,9 @@ const renderItem = (course: Course) => {
     )
 }
 export default function Courses() {
-    const [courses, setCourses] = useState<Course[] | null>(null);
-    const getCourses = async () => {
-        setCourses(await getAll());
+    const [courses, setCourses] = useState<Course[] | null>(null), getCourses = async () => {
+        const courses = await fetch('/api/course/courses').then((res) => res.json());
+        setCourses(courses)
     };
     useEffect(() => {
         getCourses()

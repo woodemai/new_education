@@ -56,12 +56,8 @@ D
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 N
 app/courses/@modal/default.tsx,b\6\b6b24ff03db7fe1c78004e93ef9e88ab3a7c7033
-K
-pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
 G
 styles/modal.module.css,b\2\b25c8f79b0a1cc06ff75dc961e57fcaa9bffac1d
-I
-styles/profile.module.css,d\c\dc6fcffd7cde57d628becf0ae3df13f7a278b594
 Q
 !app/courses/[id]/@course/page.tsx,8\2\82e37c357dd513e6dcfe135001edd4a7b53dea09
 O
@@ -76,8 +72,6 @@ H
 styles/button.module.css,5\9\591cb90b486036bc619dbcadcc2c2d585a29b277
 F
 styles/item.module.css,0\d\0dc75cb5a432eef3c9a7f56756a8a5a39d919744
-J
-components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 R
 "app/courses/[id]/@lesson/getAll.ts,e\7\e7b074351ce026224f1b00d757ac5a09ed2c060d
 4

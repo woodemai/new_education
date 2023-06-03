@@ -10,12 +10,49 @@
   },
   "footer": {
     "contactUs": "Contact us",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "issue": "If there is an error tell us on"
   },
   "home": {
     "heading": "Modern Fast Secure",
     "body": "New Education is a website for online education. There are a lot of courses on various topics.",
     "pages": "Pages",
-    "roadmap": "Roadmap"
+    "pagesArr": [
+      {
+        "name": "Courses",
+        "desc": "All courses",
+        "href": "/courses"
+      },
+      {
+        "name": "Reviews",
+        "desc": "Comments written by our users",
+        "href": "/reviews"
+      },
+      {
+        "name": "Profile",
+        "desc": "Your profile",
+        "href": "/profile"
+      },
+      {
+        "name": "Settings",
+        "desc": "Settings and preferences",
+        "href": "/settings"
+      }
+    ],
+    "roadmap": "Roadmap",
+    "roadmapArr": [
+      {
+        "name": "Internationalization",
+        "desc": "Add support for Russian language"
+      },
+      {
+        "name": "Lessons",
+        "desc": "Implement ability to add to lessons links, images, videos and other content"
+      },
+      {
+        "name": "Roles",
+        "desc": "Add roles: Admin, Student, Teacher. Admin and teacher can add lessons, admin  also can add courses and student can study."
+      }
+    ]
   }
 }
