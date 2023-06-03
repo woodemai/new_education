@@ -54,5 +54,24 @@
         "desc": "Add roles: Admin, Student, Teacher. Admin and teacher can add lessons, admin  also can add courses and student can study."
       }
     ]
+  },
+  "coursesPage": {
+    "heading": "Courses",
+    "noCourses": "Courses not found",
+    "myCoursesHeading": "My courses",
+    "addCourseBtn": "Add course"
+  },
+  "reviewsPage": {
+    "header": {
+      "allReviews": "All reviews",
+      "myReviews": "My reviews",
+      "addReview": "Add review"
+    },
+    "noReviews": "No reviews yet",
+    "heading": "All reviews"
+  },
+  "unauthenticated": {
+    "heading": "You need to be authenticated to view this page",
+    "button": "Login"
   }
 }

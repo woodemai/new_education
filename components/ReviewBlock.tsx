@@ -1,17 +1,15 @@
-import React, {FC, useEffect, useState} from "react";
+'use client'
+import {FC} from "react";
 import ReactMarkdown from "react-markdown";
 import styles from "../styles/reviews.module.css";
 import {Review} from "@prisma/client";
 
 
 const Item: FC<{ review: Review }> = ({review}) => {
-    console.log(review);
-    const createdAt = review.createdAt.toString();
-    console.log(createdAt)
-    const [date, setDate] = useState<string>("");
-    useEffect(() => {
-        setDate(createdAt);
-    }, [review.createdAt]);
+    const date =
+        review.createdAt.getUTCDate().toString() + "." +
+        review.createdAt.getUTCMonth().toString() + "." +
+        review.createdAt.getUTCFullYear().toString();
     return (
         <div className={styles.item}>
             <div className={styles.item__inner}>

@@ -1,10 +1,11 @@
-"use client";
 import Item from "@/components/Item";
 import List from "@/components/List";
 import Button from "@/components/Button";
 import {Course} from "@prisma/client";
-import {useEffect, useState} from "react";
 import CoursesPageLoader from "@/components/loading/courses/CoursesPageLoader";
+import {Locale} from "@/i18n-config";
+import {getDictionary} from "@/get-dictionaries";
+import prisma from "@/lib/prisma";
 
 const renderItem = (course: Course) => {
     return (
@@ -12,33 +13,27 @@ const renderItem = (course: Course) => {
               href={`courses/${course.id}`}/>
     )
 }
-export default function Courses() {
-    const [courses, setCourses] = useState<Course[] | null>(null), getCourses = async () => {
-        const courses = await fetch('/api/course/courses').then((res) => res.json());
-        setCourses(courses)
-    };
-    useEffect(() => {
-        getCourses()
-    }, []);
-
+export default async function Courses({params: {lang}}: { params: { lang: Locale } }) {
+    const {coursesPage} = await getDictionary(lang);
+    const courses = await prisma.course.findMany()
     if (!courses) {
         return <CoursesPageLoader/>
     }
     if (!courses.length) {
         return (
             <>
-                <h3>No courses were found</h3>
-                <Button href={"/courses/add"}>Add course</Button>
+                <h3>{coursesPage.noCourses}</h3>
+                <Button href={"/courses/add"}>{coursesPage.addCourseBtn}</Button>
             </>
 
         );
     }
     return (
         <>
-            <h1>Courses</h1>
+            <h1>{coursesPage.heading}</h1>
             <List items={courses}
-                  element={(course: Course) => renderItem(course)} heading={"My courses"}/>
-            <Button href={"/courses/add"}>Add course</Button>
+                  element={(course: Course) => renderItem(course)} heading={coursesPage.myCoursesHeading}/>
+            <Button href={"/courses/add"}>{coursesPage.addCourseBtn}</Button>
         </>
     );
 }
