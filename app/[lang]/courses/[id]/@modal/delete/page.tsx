@@ -3,32 +3,31 @@ import Modal from "@/components/Modal";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import styles from '../../../../../styles/utils.module.css'
+import styles from '../../../../../../styles/utils.module.css'
 import CourseLoad from "@/components/loading/CourseLoad";
-import {Lesson} from "@prisma/client";
+import {Course} from "@prisma/client";
 
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [lesson, setLesson] = useState<Lesson | null>();
+    const [course, setCourse] = useState<Course | null>();
     const router = useRouter()
-    const courseId = lesson?.courseId;
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch(`/api/lesson/${id}`, {
+            const response = await fetch(`/api/course/${id}`, {
                 method: "GET"
             });
             if (!response.ok) {
-                console.error(`Failed to fetch lesson with ID: ${id}`);
+                console.error(`Failed to fetch course with ID: ${id}`);
                 return;
             }
             const data = await response.json();
-            setLesson(data);
+            setCourse(data);
         }
         if (id) {
             getData()
         }
     }, [id]);
-    if (!lesson) {
+    if (!course) {
         return (
             <Modal>
                 <CourseLoad/>
@@ -37,16 +36,16 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleRemove = async () => {
-        await fetch(`/api/lesson/${id}`, {
+        await fetch(`/api/course/${id}`, {
             method: "DELETE"
         });
         router.refresh()
-        router.push(`/courses/${courseId}`)
+        router.push('/courses')
     }
     return (
         <Modal>
-            <form onSubmit={handleRemove} method={'delete'} className={styles.container}>
-                <h2>Are you sure you want to delete course: {lesson.title}?</h2>
+            <form onSubmit={handleRemove} method={'post'} className={styles.container}>
+                <h2>Are you sure you want to delete course {course.title}?</h2>
                 <Button type={'submit'}>Confirm</Button>
             </form>
         </Modal>

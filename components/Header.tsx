@@ -5,13 +5,23 @@ import Button from "@/components/Button";
 import HorizontalNavbar from "@/components/HorizontalNavbar";
 import React, {useState} from "react";
 
-export default function Header() {
+export default function Header({dictionary}: {
+    dictionary: {
+        home: string,
+        courses: string,
+        reviews: string,
+        profile: string,
+        settings: string,
+        login: string,
+        logout: string,
+    }
+}) {
     const {data: session} = useSession()
     const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
     const authLink = session
-        ? <Button type={'button'} onClick={() => signOut()}>Logout</Button>
-        : <Button type={'button'} onClick={() => signIn()}>Login</Button>
+        ? <Button type={'button'} onClick={() => signOut()}>{dictionary.logout}</Button>
+        : <Button type={'button'} onClick={() => signIn()}>{dictionary.login}</Button>
     return (
         <>
             <header>
@@ -23,11 +33,11 @@ export default function Header() {
                 </div>
                 <nav className='horizontalNav'>
                     <ul>
-                        <li><Link href={'/'}>Home</Link></li>
-                        <li><Link href={'/courses'}>Courses</Link></li>
-                        <li><Link href={'/reviews'}>Reviews</Link></li>
-                        <li><Link href={'/profile'}>Profile</Link></li>
-                        <li><Link href={'/settings'}>Settings</Link></li>
+                        <li><Link href={'/'}>{dictionary.home}</Link></li>
+                        <li><Link href={'/courses'}>{dictionary.courses}</Link></li>
+                        <li><Link href={'/reviews'}>{dictionary.reviews}</Link></li>
+                        <li><Link href={'/profile'}>{dictionary.profile}</Link></li>
+                        <li><Link href={'/settings'}>{dictionary.settings}</Link></li>
                         <li>{authLink}</li>
                     </ul>
                 </nav>

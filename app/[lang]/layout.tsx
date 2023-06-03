@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import {Inter} from 'next/font/google'
 import {ReactNode} from "react";
 import Footer from "@/components/Footer";
@@ -6,8 +6,14 @@ import Header from "@/components/Header";
 import {Metadata} from "next";
 import {Analytics} from '@vercel/analytics/react';
 import {NextAuthProvider} from "@/components/NextAuthProvider";
+import {i18n, Locale} from "@/i18n-config";
+import {getDictionary} from "@/get-dictionaries";
 
 const inter = Inter({subsets: ['latin']})
+
+export async function generateStaticParams() {
+    return i18n.locales.map((locale) => ({lang: locale}))
+}
 
 export const metadata: Metadata = {
     title: 'New Education',
@@ -17,17 +23,23 @@ export const metadata: Metadata = {
     }
 }
 
-export default function RootLayout({children}: { children: ReactNode }) {
+export default async function RootLayout({
+                                             children, params: {lang}
+                                         }: {
+    children: ReactNode,
+    params: { lang: Locale }
+}) {
+    const dictionary = await getDictionary(lang);
     return (
-        <html lang="en">
+        <html lang={lang}>
         <body className={inter.className}>
         <NextAuthProvider>
-            <Header/>
+            <Header dictionary={dictionary.header}/>
             <main>
                 {children}
                 <Analytics/>
             </main>
-            <Footer/>
+            <Footer dictionary={dictionary.footer}/>
         </NextAuthProvider>
         </body>
         </html>

@@ -4,8 +4,9 @@ import List from "@/components/List";
 import Button from "@/components/Button";
 import {Course} from "@prisma/client";
 import {useEffect, useState} from "react";
-import {getAll} from "@/app/courses/getAll";
+import {getAll} from "@/app/[lang]/courses/getAll";
 import CoursesPageLoader from "@/components/loading/courses/CoursesPageLoader";
+
 const renderItem = (course: Course) => {
     return (
         <Item key={course.id} name={course.title} description={course.body}

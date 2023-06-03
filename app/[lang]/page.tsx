@@ -1,13 +1,21 @@
 import List from "@/components/List";
 import Item from "@/components/Item";
 import ReactMarkdown from "react-markdown";
+import {Locale} from "@/i18n-config";
+import {getDictionary} from "@/get-dictionaries";
 
 const renderItem = (page: { name: string, description: string, href: string }) => {
     return (
         <Item name={page.name} description={page.description} href={page.href} key={page.href}/>
     )
 }
-export default function Home() {
+export default async function Home({
+                                       params: {lang},
+                                   }: {
+    params: { lang: Locale }
+}) {
+    const dictionary = await getDictionary(lang);
+
     const pages = [
         {
             name: "Courses",
@@ -49,12 +57,10 @@ export default function Home() {
     ]
     return (
         <>
-            <h1>Modern Fast Secure</h1>
-            <ReactMarkdown>
-                New Education is a website for online education. There are a lot of courses on various topics.
-            </ReactMarkdown>
-            <List items={pages} element={(page) => renderItem(page)} heading={"Pages"}/>
-            <List items={tasks} element={(task) => renderItem(task)} heading={'Roadmap'}/>
+            <h1>{dictionary.home.heading}</h1>
+            <ReactMarkdown>{dictionary.home.body}</ReactMarkdown>
+            <List items={pages} element={(page) => renderItem(page)} heading={dictionary.home.pages}/>
+            <List items={tasks} element={(task) => renderItem(task)} heading={dictionary.home.roadmap}/>
         </>
     )
 }

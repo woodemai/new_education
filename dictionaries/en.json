@@ -1,0 +1,21 @@
+{
+  "header": {
+    "home": "Home",
+    "courses": "Courses",
+    "reviews": "Reviews",
+    "profile": "Profile",
+    "settings": "Settings",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "footer": {
+    "contactUs": "Contact us",
+    "rights": "All rights reserved"
+  },
+  "home": {
+    "heading": "Modern Fast Secure",
+    "body": "New Education is a website for online education. There are a lot of courses on various topics.",
+    "pages": "Pages",
+    "roadmap": "Roadmap"
+  }
+}

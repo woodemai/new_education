@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import List from "@/components/List";
 import Item from "@/components/Item";
 import {Lesson} from "@prisma/client";
-import {getAll} from "@/app/courses/[id]/@lesson/getAll";
+import {getAll} from "@/app/[lang]/courses/[id]/@lesson/getAll";
 import ListLoader from "@/components/loading/reviews/ListLoader";
 
 const renderItem = (lesson: Lesson) => {

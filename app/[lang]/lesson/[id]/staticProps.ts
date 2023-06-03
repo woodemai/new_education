@@ -1,4 +1,3 @@
-
 import {Lesson} from "@prisma/client";
 
 export default async function generateStaticProps(): Promise<void[]> {

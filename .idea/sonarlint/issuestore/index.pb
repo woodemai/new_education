@@ -2,8 +2,6 @@
 Q
 !components/loading/CourseLoad.tsx,7\6\765e195bd7b68031a76b88067e828afed80a9da5
 E
-components/Footer.tsx,0\3\035881c67fe548d6d088baa1dc920c2edd8da095
-E
 components/Button.tsx,9\6\967fc9ef7730390fdef26e25dd6e72c3d5b28065
 E
 components/InputC.tsx,d\d\dd4f81673bae74d6b024308aea7768c442d40566
@@ -45,10 +43,6 @@ F
 app/courses/layout.tsx,b\3\b3e92b52e0a5f80221ce87f1292e7c60b060ee83
 N
 app/reviews/@modal/default.tsx,b\4\b4e9aea27ce921c2facd402fdda2fee2841182bc
-?
-app/loading.tsx,6\9\69c0ab637b92d9f081a7292223625dc93b7d8e57
->
-next.config.js,8\1\811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
 >
 .eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 =
@@ -66,16 +60,12 @@ K
 pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
 G
 styles/modal.module.css,b\2\b25c8f79b0a1cc06ff75dc961e57fcaa9bffac1d
-D
-app/profile/page.tsx,7\4\74b57ca1c7df752b870957127aab09e4a203d3a5
 I
 styles/profile.module.css,d\c\dc6fcffd7cde57d628becf0ae3df13f7a278b594
 Q
 !app/courses/[id]/@course/page.tsx,8\2\82e37c357dd513e6dcfe135001edd4a7b53dea09
 O
 app/courses/@modal/add/page.tsx,3\3\331429fdeb98e7f6463716ff466c9949255d7bbb
-B
-styles/globals.css,8\c\8c258232cbcd5d83991c524a9e86c8d3f984fc57
 D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 H
@@ -86,7 +76,17 @@ H
 styles/button.module.css,5\9\591cb90b486036bc619dbcadcc2c2d585a29b277
 F
 styles/item.module.css,0\d\0dc75cb5a432eef3c9a7f56756a8a5a39d919744
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
-<
-app/page.tsx,6\f\6f76c4f4dad83442e836edc16c9735cb7bb32a73
+J
+components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
+R
+"app/courses/[id]/@lesson/getAll.ts,e\7\e7b074351ce026224f1b00d757ac5a09ed2c060d
+4
+.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+>
+next.config.js,8\1\811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
+S
+#app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
+O
+app/reviews/@modal/add/page.tsx,0\7\07f6d458b84dfd36d3455a4cb7774d78a63ef4c2
+M
+app/reviews/@modal/add/add.ts,2\5\25fe31faed2f7455c2a4a6327ccc9a53019d0846

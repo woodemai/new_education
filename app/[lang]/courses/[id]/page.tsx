@@ -1,6 +1,6 @@
 'use client'
 import Button from "@/components/Button";
-import styles from '../../../styles/utils.module.css'
+import styles from '../../../../styles/utils.module.css'
 import {useRouter} from "next/navigation";
 
 export default function CoursePage({params}: { params: { id: string } }) {

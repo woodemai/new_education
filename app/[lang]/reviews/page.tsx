@@ -3,7 +3,7 @@ import List from "@/components/List";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import ReviewBlock from "@/components/ReviewBlock";
-import {getAll} from "@/app/reviews/getAll";
+import {getAll} from "@/app/[lang]/reviews/getAll";
 import ListLoader from "@/components/loading/reviews/ListLoader";
 import {Review} from "@prisma/client";
 

@@ -4,7 +4,7 @@ import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import addReview from "@/app/reviews/@modal/add/add";
+import addReview from "@/app/[lang]/reviews/@modal/add/add";
 import {signIn, useSession} from "next-auth/react";
 import CourseLoad from "@/components/loading/CourseLoad";
 
