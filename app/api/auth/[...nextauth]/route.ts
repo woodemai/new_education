@@ -29,6 +29,13 @@ const handler = NextAuth({
             clientSecret: String(process.env.GITHUB_SECRET),
         })
     ],
+    session: {
+        updateAge: 60 * 60,
+    },
+    pages: {
+        signIn: "/signin",
+        signOut: "signout"
+    }
 })
 
 export {handler as GET, handler as POST}
