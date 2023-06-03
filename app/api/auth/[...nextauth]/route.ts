@@ -5,6 +5,11 @@ import GitHubProvider from "next-auth/providers/github";
 import NextAuth from "next-auth";
 
 const handler = NextAuth({
+    theme: {
+        brandColor: "#000",
+        colorScheme: 'light',
+        logo: "/icon.png",
+    },
     adapter: PrismaAdapter(prisma),
     providers: [
         YandexProvider({
