@@ -70,6 +70,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   Course        Course[]  @relation("CourseToUser")
+  roles         String[]  @default(["user"])
 }
 
 model VerificationToken {
