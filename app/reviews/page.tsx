@@ -17,9 +17,7 @@ export default function ReviewsPage() {
         setReviews(reviews);
     };
     useEffect(() => {
-        getReviews().then(res => {
-            console.log(res)
-        });
+        getReviews()
     }, []);
     if (reviews == null) {
         return (

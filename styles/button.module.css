@@ -2,17 +2,34 @@
     text-align: center;
     width: 100%;
     padding: 10px 20px;
-    background: black;
-    color: white;
     border-radius: 4px;
     border: 1px solid #ddd;
     cursor: pointer;
+
+    background: linear-gradient(-45deg, #000, #333);
+    background-size: 400% 400%;
+    animation: gradient 15s linear infinite;
+    color: white;
 
     transition: .1s linear;
 }
 .button:hover {
     transform: scale(102%);
     box-shadow: 0 0 4px 4px hsla(0, 0%, 80%, 0.2);
-    background: white;
+    background: linear-gradient(-45deg, #999, #eee);
+    background-size: 400% 400%;
+    animation: gradient 15s linear infinite;
     color: black;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }

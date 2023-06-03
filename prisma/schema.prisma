@@ -24,7 +24,7 @@ model Review {
   body      String
   published Boolean  @default(false)
   author    String
-  createdAt DateTime @default(now()) @db.Timestamp(6)
+  createdAt DateTime @default(now())
 }
 
 model Lesson {

@@ -22,7 +22,6 @@ export default function AddReviewPage() {
     });
     const router = useRouter()
     const handleAdd = async () => {
-        console.log(review)
         await addReview(review)
         router.back()
     };
