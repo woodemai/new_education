@@ -7,8 +7,6 @@ import {useRouter} from "next/navigation";
 import addReview from "@/app/reviews/@modal/add/add";
 import {signIn, useSession} from "next-auth/react";
 import CourseLoad from "@/components/loading/CourseLoad";
-import {Review} from "@prisma/client";
-
 
 export default function AddReviewPage() {
     const session = useSession();

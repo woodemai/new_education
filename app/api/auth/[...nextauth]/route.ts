@@ -6,7 +6,7 @@ import NextAuth from "next-auth";
 
 const handler = NextAuth({
     theme: {
-        brandColor: "#000",
+        brandColor: "#fff",
         colorScheme: 'light',
         logo: "/icon.png",
     },
