@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 const renderItem = (page: { name: string, description: string, href: string }) => {
     return (
-        <Item name={page.name} description={page.description} href={page.href}/>
+        <Item name={page.name} description={page.description} href={page.href} key={page.href}/>
     )
 }
 export default function Home() {

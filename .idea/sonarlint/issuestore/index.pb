@@ -21,8 +21,6 @@ G
 pages/api/lesson/add.ts,8\4\8415636755931a9c157db1592c7f6b281d35889d
 J
 pages/api/course/course.ts,3\9\3976ab1c6ed916e12f673830104c0b088144d362
-H
-pages/api/course/[id].ts,8\d\8d8ae6b8f0dbd2be070158d76927eb2837718b5e
 =
 lib/prisma.ts,9\c\9c975082331e190d75de0ffaa9d8a2aff6950f8f
 T

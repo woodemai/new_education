@@ -19,9 +19,9 @@
 .item:hover {
     box-shadow: 0 0 4px 4px hsla(0, 0%, 50%, 0.5);
     transform: scale(101%);
-    background: linear-gradient(-45deg, #000, #222);
+    background: linear-gradient(-45deg, #555, #000);
     background-size: 400% 400%;
-    animation: hover 3s linear infinite;
+    animation: hover 5s linear infinite;
     color: white;
 }
 
