@@ -50,8 +50,6 @@ A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 F
 app/[lang]/loading.tsx,b\2\b280c364eba9ee04460100bb48bc3a9c2674e309
-Z
-*app/[lang]/api/auth/[...nextauth]/route.ts,2\2\2259257f483fdf75fa5f36e22a397f3a10408ab5
 Q
 !app/[lang]/lesson/[id]/layout.tsx,3\5\35c6231b549e0992ee5cfdcd6fd7e5ec4b5935c9
 U
@@ -100,16 +98,12 @@ L
 app/[lang]/settings/page.tsx,b\7\b7cf2795ed3c22f0138661fe1d92015572ea5508
 >
 i18n-config.ts,6\e\6e6a2d551d61334f32fe3986bd63ec69fbfc2b05
-I
-styles/profile.module.css,d\c\dc6fcffd7cde57d628becf0ae3df13f7a278b594
 K
 pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
 N
 app/[lang]/courses/loading.tsx,4\e\4e4ce29a568e000aeb3e944b592c3c3912f89dd7
 K
 app/[lang]/profile/page.tsx,d\7\d765f89dff0cc296483d35062adfbd5844a7c391
-B
-styles/globals.css,8\c\8c258232cbcd5d83991c524a9e86c8d3f984fc57
 E
 components/Footer.tsx,0\3\035881c67fe548d6d088baa1dc920c2edd8da095
 K
@@ -120,3 +114,27 @@ V
 middleware.ts,3\0\306298667dd8f63c95afc94693a7bfe5a20f54f5
 =
 lib/prisma.ts,9\c\9c975082331e190d75de0ffaa9d8a2aff6950f8f
+D
+prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
+C
+get-dictionaries.ts,3\e\3e518cdea439d99f9e75db80351202f06a6aa1e2
+E
+app/[lang]/layout.tsx,c\8\c89533553d66f537a76e63ec5b5920e0aa0b8b14
+C
+app/[lang]/page.tsx,7\1\711b0c5a03bf84ba1bf18aa7b188a8fdc6211520
+E
+components/Header.tsx,3\6\36aef25bb01676aa8d3d032efb640f83d1b3a3e9
+M
+app/[lang]/reviews/layout.tsx,9\5\9586e56d14700b522982a4f2664c63a9b64ced23
+J
+components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
+M
+app/[lang]/courses/layout.tsx,5\9\593a874e7c0d9921427dcdb41f6caf2f1911f057
+D
+dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
+S
+#app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
+K
+app/[lang]/courses/page.tsx,3\b\3b2c72f63e6cd18b1aea00e9287eef8425b2940f
+L
+components/HeaderReviews.tsx,8\3\834db865d9212917ff62fa28a12c2ca6a04bb901
