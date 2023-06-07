@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 
 export const revalidate = 0;
 
@@ -13,4 +13,16 @@ export async function GET() {
     return reviews.length
         ? NextResponse.json(reviews, {status: 200})
         : NextResponse.json({error: "Not found"}, {status: 404});
+}
+
+export async function POST(request: NextRequest) {
+    try {
+        const json = await request.json();
+        const review = await prisma.review.create({
+            data: json,
+        });
+        return NextResponse.json(review, {status: 200})
+    } catch (error: any) {
+        return NextResponse.json(error.message, {status: 500});
+    }
 }

@@ -2,24 +2,21 @@
 import Button from "@/components/Button";
 import styles from '../../../../styles/utils.module.css'
 import {useRouter} from "next/navigation";
-import {useEffect, useState} from "react";
+import {cache, use} from "react";
 import ReactMarkdown from "react-markdown";
 import {Lesson} from "@prisma/client";
 import ListLoader from "@/components/loading/reviews/ListLoader";
-import {GET} from "@/app/api/lesson/[id]/route";
 
+const getLesson = cache((id: string) =>
+    fetch(`http://localhost:3000/api/lesson/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
 export default async function LessonPage({params}: { params: { id: string } }) {
     const {id} = params;
     const router = useRouter();
-    const [lesson, setLesson] = useState<Lesson | null>();
-
-    useEffect(() => {
-        const getLesson = async () => {
-            const res = await GET(id).then(res => res.json());
-            setLesson(res);
-        }
-        getLesson()
-    }, [id]);
+    const lesson = use<Lesson>(getLesson(id));
     return (lesson)
         ? (
             <>

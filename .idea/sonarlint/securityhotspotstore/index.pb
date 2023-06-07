@@ -54,8 +54,6 @@ U
 %app/[lang]/lesson/[id]/staticProps.ts,c\3\c3bd31916286da3fb52c958ec65a035ef3ea00ab
 R
 "app/[lang]/lesson/[id]/loading.tsx,6\c\6c80cb405d12564f45b0e78f2464779a6e9a8dcf
-O
-app/[lang]/lesson/[id]/page.tsx,c\5\c57846d0ab4163690cc6d5d2f595fd6871b9a16c
 Y
 )app/[lang]/lesson/[id]/@modal/default.tsx,4\c\4ce8f9f97f07f8736f1fb612307f1061eb61ab7c
 Y
@@ -120,8 +118,6 @@ M
 app/[lang]/reviews/layout.tsx,9\5\9586e56d14700b522982a4f2664c63a9b64ced23
 J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
-M
-app/[lang]/courses/layout.tsx,5\9\593a874e7c0d9921427dcdb41f6caf2f1911f057
 D
 dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
 S

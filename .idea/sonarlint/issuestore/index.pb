@@ -84,8 +84,6 @@ P
 -app/[lang]/lesson/[id]/@modal/delete/page.tsx,b\4\b4f04c40c4d2739aed37ab4df73e1c8087c13599
 [
 +app/[lang]/lesson/[id]/@modal/edit/page.tsx,0\4\0408f95981447ef5c590a9934c2f771367968230
-O
-app/[lang]/lesson/[id]/page.tsx,c\5\c57846d0ab4163690cc6d5d2f595fd6871b9a16c
 L
 app/[lang]/settings/page.tsx,b\7\b7cf2795ed3c22f0138661fe1d92015572ea5508
 U
@@ -120,8 +118,6 @@ D
 dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
 L
 components/HeaderReviews.tsx,8\3\834db865d9212917ff62fa28a12c2ca6a04bb901
-M
-app/[lang]/courses/layout.tsx,5\9\593a874e7c0d9921427dcdb41f6caf2f1911f057
 M
 app/[lang]/reviews/layout.tsx,9\5\9586e56d14700b522982a4f2664c63a9b64ced23
 J
