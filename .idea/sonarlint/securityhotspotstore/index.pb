@@ -44,8 +44,6 @@ H
 app/[lang]/not-found.tsx,d\7\d78ecddae7c28d69440688f5f05d120ee586595d
 G
 styles/utils.module.css,b\8\b80f0ef32a8af297a94ac8872f6744a1c511a296
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 F
@@ -84,14 +82,10 @@ b
 2app/[lang]/courses/[id]/@modal/add-lesson/page.tsx,1\e\1e69d9bdb4af318a0f353489ede4969edbcb2086
 [
 +app/[lang]/courses/[id]/@course/loading.tsx,d\5\d535173f81935c1065a4dda49904f82ee7b4f6b7
-X
-(app/[lang]/courses/[id]/@course/page.tsx,9\e\9e47c1ff221ca38c43de44631dfbf67d3ff3c502
 [
 +app/[lang]/courses/[id]/@lesson/loading.tsx,8\c\8cf2ac6ff3bb5aa3fbd43dbb08148654c2fc1384
 Y
 )app/[lang]/courses/[id]/@lesson/getAll.ts,6\3\63a19af4bdab06103fd524293e0d2c35bf7460bb
-X
-(app/[lang]/courses/[id]/@lesson/page.tsx,d\0\d09ec8f166c5ac36b2666ae3963544a0365f66df
 N
 app/[lang]/reviews/loading.tsx,3\f\3fd3f35016a2a5c41c0751e56cfbff92f3ac5d79
 L
@@ -118,8 +112,6 @@ D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 C
 get-dictionaries.ts,3\e\3e518cdea439d99f9e75db80351202f06a6aa1e2
-E
-app/[lang]/layout.tsx,c\8\c89533553d66f537a76e63ec5b5920e0aa0b8b14
 C
 app/[lang]/page.tsx,7\1\711b0c5a03bf84ba1bf18aa7b188a8fdc6211520
 E
@@ -134,7 +126,5 @@ D
 dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
 S
 #app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
-K
-app/[lang]/courses/page.tsx,3\b\3b2c72f63e6cd18b1aea00e9287eef8425b2940f
 L
 components/HeaderReviews.tsx,8\3\834db865d9212917ff62fa28a12c2ca6a04bb901

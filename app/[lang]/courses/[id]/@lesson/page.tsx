@@ -1,5 +1,5 @@
 'use client'
-import {useEffect, useState} from "react";
+import {cache, use} from "react";
 import List from "@/components/List";
 import Item from "@/components/Item";
 import {Lesson} from "@prisma/client";
@@ -11,17 +11,15 @@ const renderItem = (lesson: Lesson) => {
               href={`/lesson/${lesson.id}`}/>
     )
 }
+const getLessons = cache((id: string) =>
+    fetch(`http://localhost:3000/api/lesson/byCourseId/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
 export default function Lessons({params}: { params: { id: string } }) {
     const {id} = params;
-    const [lessons, setLessons] = useState<Lesson[]>();
-    useEffect(() => {
-        const getLessons = async () => {
-           // setLessons(await getAll(id))
-        }
-        if (id) {
-            getLessons()
-        }
-    }, [id]);
+    const lessons = use<Lesson[]>(getLessons(id));
     if (!lessons) {
         return <ListLoader/>;
     }

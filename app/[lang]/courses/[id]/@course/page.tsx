@@ -1,24 +1,20 @@
 'use client'
 import ReactMarkdown from "react-markdown";
-import {useEffect, useState} from "react";
 import HeadingLoad from "@/components/loading/HeadingLoad";
 import Heading2Load from "@/components/loading/Heading2Load";
 import {Course} from "@prisma/client";
+import {cache, use} from 'react';
 
+
+const getCourse = cache((id: string) =>
+    fetch(`http://localhost:3000/api/course/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
 export default function CoursePage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false});
-    useEffect(() => {
-        const getCourse = async () => {
-            const res = await fetch(`/api/course/${id}`)
-                .then(res => res.json());
-
-            setCourse(res);
-        }
-        if (id) {
-            getCourse()
-        }
-    }, [id]);
+    const course = use<Course>(getCourse(id));
     if (!course) {
         return (
             <>
@@ -26,11 +22,12 @@ export default function CoursePage({params}: { params: { id: string } }) {
                 <Heading2Load/>
             </>
         )
+    } else {
+        return (
+            <>
+                <h2>{course.title}</h2>
+                <ReactMarkdown>{course.body}</ReactMarkdown>
+            </>
+        )
     }
-    return (
-        <>
-            <h2>{course.title}</h2>
-            <ReactMarkdown>{course.body}</ReactMarkdown>
-        </>
-    )
 }

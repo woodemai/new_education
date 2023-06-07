@@ -1,13 +1,15 @@
 import prisma from "@/lib/prisma";
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 
-export async function GET(courseId: string) {
+export async function GET(request: NextRequest, {params}: { params: { id: string } }) {
+    const {id} = params;
     const lessons = await prisma.lesson.findMany({
         where: {
-            courseId
+            courseId: id,
         }
-    });
+    })
     return lessons.length
-        ? NextResponse.json(lessons, {status: 200})
+        ? new NextResponse(JSON.stringify(lessons), {status: 200, headers: {"Content-Type": "application/json"},})
         : NextResponse.json({error: "Not found"}, {status: 404});
+
 }

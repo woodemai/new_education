@@ -72,12 +72,6 @@ F
 app/[lang]/loading.tsx,b\2\b280c364eba9ee04460100bb48bc3a9c2674e309
 H
 app/[lang]/not-found.tsx,d\7\d78ecddae7c28d69440688f5f05d120ee586595d
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
-X
-(app/[lang]/courses/[id]/@course/page.tsx,9\e\9e47c1ff221ca38c43de44631dfbf67d3ff3c502
-X
-(app/[lang]/courses/[id]/@lesson/page.tsx,d\0\d09ec8f166c5ac36b2666ae3963544a0365f66df
 b
 2app/[lang]/courses/[id]/@modal/add-lesson/page.tsx,1\e\1e69d9bdb4af318a0f353489ede4969edbcb2086
 ^
@@ -118,8 +112,6 @@ D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 C
 get-dictionaries.ts,3\e\3e518cdea439d99f9e75db80351202f06a6aa1e2
-E
-app/[lang]/layout.tsx,c\8\c89533553d66f537a76e63ec5b5920e0aa0b8b14
 C
 app/[lang]/page.tsx,7\1\711b0c5a03bf84ba1bf18aa7b188a8fdc6211520
 E
@@ -132,8 +124,6 @@ M
 app/[lang]/courses/layout.tsx,5\9\593a874e7c0d9921427dcdb41f6caf2f1911f057
 M
 app/[lang]/reviews/layout.tsx,9\5\9586e56d14700b522982a4f2664c63a9b64ced23
-K
-app/[lang]/courses/page.tsx,3\b\3b2c72f63e6cd18b1aea00e9287eef8425b2940f
 J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 S
