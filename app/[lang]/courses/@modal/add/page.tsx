@@ -1,26 +1,27 @@
 'use client';
 import Modal from "@/components/Modal";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, useEffect, useState} from "react";
 import Input from "@/components/InputC";
 import {useRouter} from "next/navigation";
 import {Course} from "@prisma/client";
 
+const postCourse = cache((title: string, body: string) =>
+    fetch(`${process.env.BASE_URL}/api/course`, {
+        headers: {"Content-Type": "application/json"},
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            body,
+        })
+    }).then((res) => res.json())
+);
 export default function Add() {
     const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false});
     const router = useRouter()
     const handleAdd = async () => {
         const {title, body} = course
-        await fetch(`/api/course/course`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                title,
-                body,
-            })
-        });
+        await postCourse(title, body);
         router.back()
     };
     const [heading, setHeading] = useState<string>('');
