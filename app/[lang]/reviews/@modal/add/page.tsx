@@ -2,11 +2,22 @@
 import Modal from "@/components/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {signIn, useSession} from "next-auth/react";
 import CourseLoad from "@/components/loading/CourseLoad";
 
+const getLesson = cache((title: string, body: string, author: string) =>
+    fetch(`${process.env.BASE_URL}/api/review`, {
+        headers: {"Content-Type": "application/json"},
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            body,
+            author,
+        })
+    }).then((res) => res.json())
+);
 export default function AddReviewPage() {
     const session = useSession();
     const author = String(session.data?.user?.name);
@@ -15,17 +26,7 @@ export default function AddReviewPage() {
     const [title, setTitle] = useState<string>("");
     const [body, setBody] = useState<string>("");
     const handleAdd = async () => {
-        await fetch('/api/reviews/add', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                title,
-                body,
-                author,
-            })
-        })
+        getLesson(title, body, author);
         router.back()
     };
     const [heading, setHeading] = useState<string>("");

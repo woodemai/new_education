@@ -19,8 +19,6 @@ J
 pages/api/course/course.ts,3\9\3976ab1c6ed916e12f673830104c0b088144d362
 >
 .eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
-=
-tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :
@@ -36,8 +34,6 @@ F
 styles/item.module.css,0\d\0dc75cb5a432eef3c9a7f56756a8a5a39d919744
 H
 styles/button.module.css,5\9\591cb90b486036bc619dbcadcc2c2d585a29b277
-4
-.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 >
 next.config.js,8\1\811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
 H
@@ -120,7 +116,5 @@ J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 D
 dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
-S
-#app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 L
 components/HeaderReviews.tsx,8\3\834db865d9212917ff62fa28a12c2ca6a04bb901

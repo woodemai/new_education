@@ -7,7 +7,7 @@ import {cache, use} from 'react';
 
 
 const getCourse = cache((id: string) =>
-    fetch(`http://localhost:3000/api/course/${id}`, {
+    fetch(`${process.env.BASE_URL}/api/course/${id}`, {
         headers: {"Content-Type": "application/json"},
         method: "GET"
     }).then((res) => res.json())
