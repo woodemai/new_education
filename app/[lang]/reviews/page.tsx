@@ -5,7 +5,7 @@ import ListLoader from "@/components/loading/reviews/ListLoader";
 import {Review} from "@prisma/client";
 import {Locale} from "@/i18n-config";
 import {getDictionary} from "@/get-dictionaries";
-import prisma from "@/lib/prisma";
+import {GET} from "@/app/api/review/route";
 
 
 const renderReview = (review: Review) => {
@@ -13,7 +13,7 @@ const renderReview = (review: Review) => {
 }
 export default async function ReviewsPage({params: {lang}}: { params: { lang: Locale } }) {
     const {reviewsPage} = await getDictionary(lang);
-    const reviews = await prisma.review.findMany();
+    const reviews = await GET().then(res => res.json());
 
     if (reviews == null) {
         return (

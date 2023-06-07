@@ -5,7 +5,7 @@ import {Course} from "@prisma/client";
 import CoursesPageLoader from "@/components/loading/courses/CoursesPageLoader";
 import {Locale} from "@/i18n-config";
 import {getDictionary} from "@/get-dictionaries";
-import prisma from "@/lib/prisma";
+import {GET} from "@/app/api/course/route";
 
 const renderItem = (course: Course) => {
     return (
@@ -15,7 +15,7 @@ const renderItem = (course: Course) => {
 }
 export default async function Courses({params: {lang}}: { params: { lang: Locale } }) {
     const {coursesPage} = await getDictionary(lang);
-    const courses = await prisma.course.findMany()
+    const courses = await GET().then(res => res.json());
     if (!courses) {
         return <CoursesPageLoader/>
     }

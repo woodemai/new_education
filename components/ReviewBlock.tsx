@@ -6,10 +6,7 @@ import {Review} from "@prisma/client";
 
 
 const Item: FC<{ review: Review }> = ({review}) => {
-    const date =
-        review.createdAt.getUTCDate().toString() + "." +
-        review.createdAt.getUTCMonth().toString() + "." +
-        review.createdAt.getUTCFullYear().toString();
+    const date = "";
     return (
         <div className={styles.item}>
             <div className={styles.item__inner}>

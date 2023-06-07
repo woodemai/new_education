@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import List from "@/components/List";
 import Item from "@/components/Item";
 import {Lesson} from "@prisma/client";
-import {getAll} from "@/app/[lang]/courses/[id]/@lesson/getAll";
 import ListLoader from "@/components/loading/reviews/ListLoader";
 
 const renderItem = (lesson: Lesson) => {
@@ -17,7 +16,7 @@ export default function Lessons({params}: { params: { id: string } }) {
     const [lessons, setLessons] = useState<Lesson[]>();
     useEffect(() => {
         const getLessons = async () => {
-            setLessons(await getAll(id))
+           // setLessons(await getAll(id))
         }
         if (id) {
             getLessons()

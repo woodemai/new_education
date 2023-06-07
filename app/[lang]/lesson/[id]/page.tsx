@@ -5,52 +5,32 @@ import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
 import ReactMarkdown from "react-markdown";
 import {Lesson} from "@prisma/client";
-import Heading2Load from "@/components/loading/Heading2Load";
-import HeadingLoad from "@/components/loading/HeadingLoad";
-import ButtonLoad from "@/components/loading/ButtonLoad";
+import ListLoader from "@/components/loading/reviews/ListLoader";
+import {GET} from "@/app/api/lesson/[id]/route";
 
-export default function LessonPage({params}: { params: { id: string } }) {
+export default async function LessonPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const router = useRouter()
-    const [lesson, setLesson] = useState<Lesson>(
-        {id: '', title: '', body: '', courseId: ''}
-    );
+    const router = useRouter();
+    const [lesson, setLesson] = useState<Lesson | null>();
+
     useEffect(() => {
         const getLesson = async () => {
-            const response = await fetch(`/api/lesson/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch lesson ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setLesson(data);
+            const res = await GET(id).then(res => res.json());
+            setLesson(res);
         }
-        if (id) {
-            getLesson()
-        }
+        getLesson()
     }, [id]);
-    if (!lesson || !lesson.title || !lesson.body) {
-        return (
+    return (lesson)
+        ? (
             <>
-                <HeadingLoad/>
-                <Heading2Load/>
-                <ButtonLoad/>
-                <ButtonLoad/>
-                <ButtonLoad/>
+                <h2>{lesson.title}</h2>
+                <ReactMarkdown>{lesson.body}</ReactMarkdown>
+                <div className={styles.list}>
+                    <Button onClick={() => router.push(`/lesson/${id}/edit`)}>Edit</Button>
+                    <Button onClick={() => router.push(`/lesson/${id}/delete`)}>Delete</Button>
+                    <Button onClick={() => router.push(`/lesson/${lesson.courseId}`)}>Go back</Button>
+                </div>
             </>
         )
-    }
-    return (
-        <>
-            <h2>{lesson.title}</h2>
-            <ReactMarkdown>{lesson.body}</ReactMarkdown>
-            <div className={styles.list}>
-                <Button onClick={() => router.push(`/lesson/${id}/edit`)}>Edit</Button>
-                <Button onClick={() => router.push(`/lesson/${id}/delete`)}>Delete</Button>
-                <Button onClick={() => router.push(`/lesson/${lesson.courseId}`)}>Go back</Button>
-            </div>
-        </>
-    )
+        : <ListLoader/>
 }

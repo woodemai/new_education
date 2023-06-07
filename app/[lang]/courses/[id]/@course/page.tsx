@@ -10,15 +10,10 @@ export default function CoursePage({params}: { params: { id: string } }) {
     const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false});
     useEffect(() => {
         const getCourse = async () => {
-            const response = await fetch(`/api/course/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch post ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setCourse(data);
+            const res = await fetch(`/api/course/${id}`)
+                .then(res => res.json());
+
+            setCourse(res);
         }
         if (id) {
             getCourse()
