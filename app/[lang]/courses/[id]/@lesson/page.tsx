@@ -12,7 +12,7 @@ const renderItem = (lesson: Lesson) => {
     )
 }
 const getLessons = cache((id: string) =>
-    fetch(`${process.env.BASE_URL}/lesson/byCourseId/${id}`, {
+    fetch(`/api/lesson/byCourseId/${id}`, {
         headers: {"Content-Type": "application/json"},
         method: "GET"
     }).then((res) => res.json())
