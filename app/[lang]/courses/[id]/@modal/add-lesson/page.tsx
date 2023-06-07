@@ -2,9 +2,21 @@
 import Modal from "@/components/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {Lesson} from "@prisma/client";
+
+const postLesson = cache((title: string, body: string, courseId: string) =>
+    fetch(`/api/lesson`, {
+        headers: {"Content-Type": "application/json"},
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            body,
+            courseId,
+        })
+    }).then((res) => res.json())
+);
 
 export default function AddLessonPage({params}: { params: { id: string } }) {
     const {id} = params;
@@ -23,20 +35,7 @@ export default function AddLessonPage({params}: { params: { id: string } }) {
 
     const handleAdd = async () => {
         if (lesson.title !== "" && lesson.body !== "") {
-            const {title, body} = lesson;
-            await fetch(`/api/lesson/add`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(
-                    {
-                        courseId: id,
-                        title,
-                        body,
-                    }
-                )
-            });
+            postLesson(lesson.title, lesson.body, id);
             router.back()
         } else {
             alert("Title and Description should not be empty!")

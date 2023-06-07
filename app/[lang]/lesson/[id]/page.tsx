@@ -8,7 +8,7 @@ import {Lesson} from "@prisma/client";
 import ListLoader from "@/components/loading/reviews/ListLoader";
 
 const getLesson = cache((id: string) =>
-    fetch(`${process.env.BASE_URL}/api/lesson/${id}`, {
+    fetch(`/api/lesson/${id}`, {
         headers: {"Content-Type": "application/json"},
         method: "GET"
     }).then((res) => res.json())

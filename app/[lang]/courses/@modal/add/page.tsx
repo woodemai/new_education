@@ -7,7 +7,7 @@ import {useRouter} from "next/navigation";
 import {Course} from "@prisma/client";
 
 const postCourse = cache((title: string, body: string) =>
-    fetch(`${process.env.BASE_URL}/api/course`, {
+    fetch(`/api/course`, {
         headers: {"Content-Type": "application/json"},
         method: "POST",
         body: JSON.stringify({

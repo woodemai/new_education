@@ -2,31 +2,31 @@
 import Modal from "@/components/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, use, useState} from "react";
 import {useRouter} from "next/navigation";
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Course} from "@prisma/client";
 
+const patchCourse = cache((title: string, body: string, id: string) =>
+    fetch(`/api/course/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "PATCH",
+        body: JSON.stringify({
+            title,
+            body,
+        })
+    }).then((res) => res.json())
+);
+const getCourse = cache((id: string) =>
+    fetch(`/api/course/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [course, setCourse] = useState<Course | null>();
+    const [course, setCourse] = useState<Course>(use<Course>(getCourse(id)));
     const router = useRouter()
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetch(`/api/course/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch post ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setCourse(data);
-        }
-        if (id) {
-            getData()
-        }
-    }, [id]);
     if (!course) {
         return (
             <Modal>
@@ -36,22 +36,8 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleEdit = async () => {
-        const {title, body} = course;
-        await fetch(`/api/course/course`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(
-                {
-                    id,
-                    title,
-                    body,
-                }
-            )
-        });
-        router.back()
-        router.refresh()
+        await patchCourse(course.title, course.body, id);
+        router.back();
     };
     return (
         <Modal>

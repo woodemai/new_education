@@ -44,8 +44,6 @@ A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 F
 app/[lang]/loading.tsx,b\2\b280c364eba9ee04460100bb48bc3a9c2674e309
-Q
-!app/[lang]/lesson/[id]/layout.tsx,3\5\35c6231b549e0992ee5cfdcd6fd7e5ec4b5935c9
 U
 %app/[lang]/lesson/[id]/staticProps.ts,c\3\c3bd31916286da3fb52c958ec65a035ef3ea00ab
 R
@@ -54,26 +52,12 @@ Y
 )app/[lang]/lesson/[id]/@modal/default.tsx,4\c\4ce8f9f97f07f8736f1fb612307f1061eb61ab7c
 Y
 )app/[lang]/lesson/[id]/@modal/loading.tsx,4\5\4572367c631b7ba0db58fd17d6be20d8d33ad2df
-[
-+app/[lang]/lesson/[id]/@modal/edit/page.tsx,0\4\0408f95981447ef5c590a9934c2f771367968230
 ]
 -app/[lang]/lesson/[id]/@modal/delete/page.tsx,b\4\b4f04c40c4d2739aed37ab4df73e1c8087c13599
-S
-#app/[lang]/courses/[id]/loading.tsx,9\0\909650153c741a4b268f33e33aa3369f6a308c3f
-P
- app/[lang]/courses/[id]/page.tsx,a\1\a1a1fb12548402f3f01892aa6b9c8e80023a281d
-R
-"app/[lang]/courses/[id]/layout.tsx,6\4\6417c779450edd01cc85b85b7dfe47fecd4c46c2
 Z
 *app/[lang]/courses/[id]/@modal/default.tsx,f\1\f15fe2871d3d7697b1e98bb7883a092ac2462487
 Z
 *app/[lang]/courses/[id]/@modal/loading.tsx,a\8\a85e8355688c1d87d2d3f0984026276602f78fad
-\
-,app/[lang]/courses/[id]/@modal/edit/page.tsx,c\4\c42401caf0c05e6420c786ea0df0c41b7af461a3
-^
-.app/[lang]/courses/[id]/@modal/delete/page.tsx,9\f\9f8fdd10c2446986e2fadb54c992997f376488e6
-b
-2app/[lang]/courses/[id]/@modal/add-lesson/page.tsx,1\e\1e69d9bdb4af318a0f353489ede4969edbcb2086
 [
 +app/[lang]/courses/[id]/@course/loading.tsx,d\5\d535173f81935c1065a4dda49904f82ee7b4f6b7
 [

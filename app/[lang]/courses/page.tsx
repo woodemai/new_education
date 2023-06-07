@@ -7,7 +7,6 @@ import {Locale} from "@/i18n-config";
 import {getDictionary} from "@/get-dictionaries";
 import prisma from "@/lib/prisma";
 
-export const revalidate = 0;
 const renderItem = (course: Course) => {
     return (
         <Item key={course.id} name={course.title} description={course.body}

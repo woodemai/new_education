@@ -1,32 +1,29 @@
 'use client'
 import Modal from "@/components/Modal";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, use} from "react";
 import {useRouter} from "next/navigation";
 import styles from '../../../../../../styles/utils.module.css'
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Course} from "@prisma/client";
 
+const deleteCourse = cache((id: string) =>
+    fetch(`/api/course/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "DELETE",
+    }).then((res) => res.json())
+);
+const getCourse = cache((id: string) =>
+    fetch(`/api/course/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
+
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [course, setCourse] = useState<Course | null>();
+    const course = use<Course>(getCourse(id));
     const router = useRouter()
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetch(`/api/course/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch course with ID: ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setCourse(data);
-        }
-        if (id) {
-            getData()
-        }
-    }, [id]);
     if (!course) {
         return (
             <Modal>
@@ -36,10 +33,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleRemove = async () => {
-        await fetch(`/api/course/${id}`, {
-            method: "DELETE"
-        });
-        router.refresh()
+        await deleteCourse(id);
         router.push('/courses')
     }
     return (
