@@ -11,13 +11,18 @@ const renderItem = (lesson: Lesson) => {
               href={`/lesson/${lesson.id}`}/>
     )
 }
-const getLessons = cache((id: string) =>
-    fetch(`/api/lesson/byCourseId/${id}`, {
+const getLessons = cache((courseId: string) =>
+    fetch(`/api/lesson/byCourseId/${courseId}`, {
         headers: {"Content-Type": "application/json"},
         method: "GET"
     }).then((res) => res.json())
 );
-export default function Lessons({id}: { id: string }) {
+export default function Lessons({id, dictionary}: {
+    id: string, dictionary: {
+        title: string,
+        noLessons: string,
+    }
+}) {
     const lessons = use<Lesson[]>(getLessons(id));
     if (!lessons) {
         return <ListLoader/>;
@@ -25,9 +30,9 @@ export default function Lessons({id}: { id: string }) {
     if (!lessons.length) {
         return (
             <div style={{margin: '10px 0'}}>
-                <h3>No lessons were found</h3>
+                <h3>{dictionary.noLessons}</h3>
             </div>
         )
     }
-    return <List items={lessons} element={(lesson: Lesson) => renderItem(lesson)} heading={'Lessons'}/>
+    return <List items={lessons} element={(lesson: Lesson) => renderItem(lesson)} heading={dictionary.title}/>
 }

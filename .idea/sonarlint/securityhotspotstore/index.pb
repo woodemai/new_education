@@ -30,26 +30,16 @@ H
 styles/button.module.css,5\9\591cb90b486036bc619dbcadcc2c2d585a29b277
 >
 next.config.js,8\1\811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
-H
-app/[lang]/not-found.tsx,d\7\d78ecddae7c28d69440688f5f05d120ee586595d
 G
 styles/utils.module.css,b\8\b80f0ef32a8af297a94ac8872f6744a1c511a296
 A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
-F
-app/[lang]/loading.tsx,b\2\b280c364eba9ee04460100bb48bc3a9c2674e309
 U
 %app/[lang]/lesson/[id]/staticProps.ts,c\3\c3bd31916286da3fb52c958ec65a035ef3ea00ab
-Z
-*app/[lang]/courses/[id]/@modal/default.tsx,f\1\f15fe2871d3d7697b1e98bb7883a092ac2462487
-Z
-*app/[lang]/courses/[id]/@modal/loading.tsx,a\8\a85e8355688c1d87d2d3f0984026276602f78fad
 [
 +app/[lang]/courses/[id]/@course/loading.tsx,d\5\d535173f81935c1065a4dda49904f82ee7b4f6b7
 [
 +app/[lang]/courses/[id]/@lesson/loading.tsx,8\c\8cf2ac6ff3bb5aa3fbd43dbb08148654c2fc1384
-N
-app/[lang]/reviews/loading.tsx,3\f\3fd3f35016a2a5c41c0751e56cfbff92f3ac5d79
 L
 app/[lang]/settings/page.tsx,b\7\b7cf2795ed3c22f0138661fe1d92015572ea5508
 >
@@ -60,10 +50,6 @@ D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 C
 get-dictionaries.ts,3\e\3e518cdea439d99f9e75db80351202f06a6aa1e2
-C
-app/[lang]/page.tsx,7\1\711b0c5a03bf84ba1bf18aa7b188a8fdc6211520
-M
-app/[lang]/reviews/layout.tsx,9\5\9586e56d14700b522982a4f2664c63a9b64ced23
 J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
 L
@@ -80,8 +66,6 @@ S
 #app/api/auth/[...nextauth]/route.ts,b\5\b5525e88675781f6170fcf71bc017d2497318972
 4
 .env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-]
--app/api/lesson/byCourseId/[courseId]/route.ts,1\6\165d7eebf013e66a82cfaad175ad568ff02ca2c2
 b
 2app/[lang]/courses/[id]/@modal/add-lesson/page.tsx,1\e\1e69d9bdb4af318a0f353489ede4969edbcb2086
 G
@@ -112,14 +96,8 @@ D
 +app/[lang]/lesson/[id]/@modal/edit/page.tsx,0\4\0408f95981447ef5c590a9934c2f771367968230
 ^
 .app/[lang]/courses/[id]/@modal/delete/page.tsx,9\f\9f8fdd10c2446986e2fadb54c992997f376488e6
-D
-dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
-D
-dictionaries/ru.json,8\9\89de53a63bf4925b7ddc43ae9050fc6c1dd6ac6c
 L
 app/api/lesson/[id]/route.ts,a\d\ad2e79966887b8ba16606c0d2cae887d947003d0
-V
-&app/[lang]/reviews/@modal/add/page.tsx,c\1\c1b5686602a7d18033a3ebb683c6ea09ef5d7ee8
 O
 components/DeleteCourseForm.tsx,a\3\a3dd18cc2043b691603be8e676e87f9c734c1c79
 ]
@@ -134,7 +112,5 @@ K
 lib/prisma.ts,9\c\9c975082331e190d75de0ffaa9d8a2aff6950f8f
 G
 app/api/review/route.ts,6\1\61f8e27b12bbd701eb9fbc5edf41f3e9398238f5
-K
-app/[lang]/reviews/page.tsx,2\0\208e1515aea5a5026c03c981344beab5568bc4f2
 V
 &app/[lang]/courses/@modal/add/page.tsx,3\7\379e125619e66f61700605edcce337791a608484

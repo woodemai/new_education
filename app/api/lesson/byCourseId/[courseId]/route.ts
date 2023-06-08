@@ -1,11 +1,11 @@
 import prisma from "@/lib/prisma";
 import {NextRequest, NextResponse} from "next/server";
 
-export async function GET(request: NextRequest, {params}: { params: { id: string } }) {
-    const {id} = params;
+export async function GET(request: NextRequest, {params}: { params: { courseId: string } }) {
+    const {courseId} = params;
     const lessons = await prisma.lesson.findMany({
         where: {
-            courseId: id,
+            courseId,
         }
     })
     return lessons.length

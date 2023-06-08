@@ -67,6 +67,13 @@
       "myReviews": "My reviews",
       "addReview": "Add review"
     },
+    "addReviewModal": {
+      "title": "Title",
+      "review": "Review",
+      "send": "Send",
+      "createNewReview": "Create new review",
+      "withHeading": "with heading"
+    },
     "noReviews": "No reviews yet",
     "heading": "All reviews"
   },
@@ -83,5 +90,21 @@
       "question": "Are you sure you want to delete lesson",
       "confirm": "Delete"
     }
+  },
+  "coursePage": {
+    "lessons": {
+      "title": "Lessons",
+      "noLessons": "No lessons found"
+    },
+    "buttons": {
+      "addLesson": "Add lesson",
+      "edit": "Edit",
+      "delete": "Delete",
+      "back": "Back"
+    }
+  },
+  "notFoundPage": {
+    "message": "This page not found",
+    "home": "Home"
   }
 }

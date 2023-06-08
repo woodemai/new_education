@@ -62,6 +62,13 @@
     "addCourseBtn": "Добавить курс"
   },
   "reviewsPage": {
+    "addReviewModal": {
+      "title": "Название",
+      "review": "Отзыв",
+      "send": "Отправить",
+      "createNewReview": "Создать новый отзыв",
+      "withHeading": "с названием"
+    },
     "header": {
       "allReviews": "Все отзывы",
       "myReviews": "Мои отзывы",
@@ -83,5 +90,21 @@
       "question": "Вы уверены, что вы хотите удалить урок",
       "confirm": "Удалить"
     }
+  },
+  "coursePage": {
+    "lessons": {
+      "title": "Уроки",
+      "noLessons": "Уроки не найдены"
+    },
+    "buttons": {
+      "addLesson": "Добавить урок",
+      "edit": "Изменить",
+      "delete": "Удалить",
+      "back": "Назад"
+    }
+  },
+  "notFoundPage": {
+    "message": "Эта страница не найдена",
+    "home": "Главная"
   }
 }

@@ -1,5 +1,5 @@
-import ComponentLoad from "@/components/loading/ComponentLoad";
+import ListLoader from "@/components/loading/reviews/ListLoader";
 
 export default function Loading () {
-    return <ComponentLoad/>
+    return <ListLoader/>
 }

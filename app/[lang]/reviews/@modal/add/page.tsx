@@ -1,67 +1,9 @@
-"use client";
-import Modal from "@/components/Modal";
-import Input from "@/components/InputC";
-import Button from "@/components/Button";
-import {cache, useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
-import {signIn, useSession} from "next-auth/react";
-import CourseLoad from "@/components/loading/CourseLoad";
+import {Locale} from "@/i18n-config";
+import {getDictionary} from "@/get-dictionaries";
+import AddReviewModal from "@/components/AddReviewModal";
 
-const getLesson = cache((title: string, body: string, author: string) =>
-    fetch(`${process.env.BASE_URL}/api/review`, {
-        headers: {"Content-Type": "application/json"},
-        method: "POST",
-        body: JSON.stringify({
-            title,
-            body,
-            author,
-        })
-    }).then((res) => res.json())
-);
-export default function AddReviewPage() {
-    const session = useSession();
-    const author = String(session.data?.user?.name);
-    const router = useRouter();
 
-    const [title, setTitle] = useState<string>("");
-    const [body, setBody] = useState<string>("");
-    const handleAdd = async () => {
-        getLesson(title, body, author);
-        router.back()
-    };
-    const [heading, setHeading] = useState<string>("");
-    useEffect(() => {
-        if (title !== "") {
-            setHeading(`with title "${title}"`);
-        } else {
-            setHeading("");
-        }
-    }, [title]);
-    if (session.status === "loading") {
-        return (
-            <Modal>
-                <CourseLoad/>
-            </Modal>
-        );
-    }
-    if (session.status === 'unauthenticated') {
-        return (
-            <Modal>
-                <h1>You need to be authenticated to view this page</h1>
-                <Button type={'button'} onClick={() => signIn()}>Login</Button>
-            </Modal>
-        )
-    }
-    return (
-        <Modal>
-            <form onSubmit={handleAdd} method={"post"}>
-                <h2>Create new review {heading}</h2>
-                <Input title={"Title"} type={"text"}
-                       onChangeInput={e => setTitle(e.target.value.trim())}/>
-                <Input title={"Review"} type={"text"}
-                       onChangeArea={e => setBody(e.target.value.trim())} isArea={true}/>
-                <Button type={"submit"}>Confirm</Button>
-            </form>
-        </Modal>
-    );
+export default async function AddReviewPage({params: {lang}}: { params: { lang: Locale } }) {
+    const {reviewsPage} = await getDictionary(lang);
+    return <AddReviewModal dictionary={reviewsPage.addReviewModal}/>
 }
