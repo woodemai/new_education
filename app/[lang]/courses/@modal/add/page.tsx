@@ -21,7 +21,7 @@ export default function Add() {
     const router = useRouter()
     const handleAdd = async () => {
         await postCourse(course.title, course.body);
-        await router.push('/courses');
+        router.replace('/courses');
     };
     const [heading, setHeading] = useState<string>('');
     useEffect(() => {

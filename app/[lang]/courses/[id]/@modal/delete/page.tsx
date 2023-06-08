@@ -34,7 +34,7 @@ export default function EditPage({params}: { params: { id: string } }) {
 
     const handleRemove = async () => {
         await deleteCourseHandle(id);
-        await router.push('/courses');
+        router.push('/courses');
     }
     return (
         <Modal>
