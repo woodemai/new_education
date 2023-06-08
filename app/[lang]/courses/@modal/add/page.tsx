@@ -33,13 +33,13 @@ export default function Page() {
     };
     return (
         <Modal>
-            <form onSubmit={handleAdd} method={'dialog'}>
+            <form method="dialog">
                 <h2>Create new course {heading}</h2>
                 <Input title={"Name"} type={'text'}
                        onChangeInput={e => setCourse({...course, title: e.target.value.trim()})}/>
                 <Input title={"Description"} type={'text'}
                        onChangeArea={e => setCourse({...course, body: e.target.value.trim()})} isArea={true}/>
-                <Button type={'submit'}>Confirm</Button>
+                <Button type="button" onClick={handleAdd}>Confirm</Button>
             </form>
         </Modal>
     )

@@ -13,7 +13,7 @@ const renderItem = (course: Course) => {
               href={`courses/${course.id}`}/>
     )
 }
-export const revalidate = 0;
+export const revalidate = 10;
 
 async function getCourses() {
     return prisma.course.findMany();
