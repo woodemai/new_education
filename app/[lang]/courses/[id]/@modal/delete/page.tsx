@@ -10,7 +10,7 @@ import {useRouter} from "next/navigation";
 const deleteCourseHandle = cache((id: string) =>
     fetch(`/api/course/${id}`, {
         method: "DELETE",
-    })
+    }).then((res) => res.json())
 );
 const getCourse = cache((id: string) =>
     fetch(`/api/course/${id}`, {
@@ -31,7 +31,7 @@ export default function EditPage({params}: { params: { id: string } }) {
         )
     }
 
-    const handleRemove = async () => {
+    const handleRemove = async (): Promise<void> => {
         await deleteCourseHandle(id);
         router.push('/courses');
     }
