@@ -33,7 +33,7 @@ export default function Page() {
     };
     return (
         <Modal>
-            <form onSubmit={async (): Promise<void> => await handleAdd()} method={'post'}>
+            <form onSubmit={handleAdd} method={'dialog'}>
                 <h2>Create new course {heading}</h2>
                 <Input title={"Name"} type={'text'}
                        onChangeInput={e => setCourse({...course, title: e.target.value.trim()})}/>

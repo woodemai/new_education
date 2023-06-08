@@ -8,7 +8,7 @@ export default function DeleteCourseForm({handleRemove, course, dictionary}: {
     dictionary?: { question: string, confirm: string }
 }) {
     return (
-        <form onSubmit={handleRemove} method={'post'} className={styles.container}>
+        <form onSubmit={handleRemove} method={'dialog'} className={styles.container}>
             <h2>Are you sure you want to delete course {course.title}?</h2>
             <Button type={'submit'}>Confirm</Button>
         </form>
