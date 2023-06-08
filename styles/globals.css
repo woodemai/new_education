@@ -42,7 +42,7 @@ header {
     width: 100%;
     padding: 20px;
     background-color: hsla(0, 5%, 100%, .5);
-    backdrop-filter: saturate(180%) blur(4px);
+    backdrop-filter: saturate(180%) blur(8px);
     box-shadow: 0 5px 10px 10px hsla(0, 0%, 80%, .3);
     animation: gradient 5s linear infinite;
     position: sticky;
@@ -131,7 +131,7 @@ footer {
     justify-content: center;
     padding: 20px 2px;
     background-color: hsla(0, 5%, 100%, .5);
-    backdrop-filter: saturate(180%) blur(3px);
+    backdrop-filter: saturate(180%) blur(8px);
     box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .1);
 }
 
