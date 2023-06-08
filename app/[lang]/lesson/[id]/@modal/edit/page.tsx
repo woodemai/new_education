@@ -2,31 +2,32 @@
 import Modal from "@/components/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, use, useState} from "react";
 import {useRouter} from "next/navigation";
 import {Lesson} from "@prisma/client";
 import CourseLoad from "@/components/loading/CourseLoad";
 
+const patchLesson = cache((title: string, body: string, id: string) =>
+    fetch(`/api/lesson/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "PATCH",
+        body: JSON.stringify({
+            title,
+            body,
+        })
+    }).then((res) => res.json())
+);
+const getLesson = cache((id: string) =>
+    fetch(`/api/lesson/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
+
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [lesson, setLesson] = useState<Lesson | null>();
+    const [lesson, setLesson] = useState<Lesson>(use<Lesson>(getLesson(id)));
     const router = useRouter()
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetch(`/api/lesson/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch post ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setLesson(data);
-        }
-        if (id) {
-            getData()
-        }
-    }, [id]);
     if (!lesson) {
         return (
             <Modal>
@@ -36,20 +37,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleEdit = async () => {
-        const {title, body} = lesson;
-        await fetch(`/api/lesson/edit`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(
-                {
-                    id,
-                    title,
-                    body,
-                }
-            )
-        });
+        await patchLesson(lesson.title, lesson.body, id);
         router.back()
     };
     return (

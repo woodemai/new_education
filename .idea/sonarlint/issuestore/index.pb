@@ -21,8 +21,6 @@ J
 .eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-D
-components/Modal.tsx,b\8\b8c94ac06602f83c385d8a12461211e8552f2934
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -41,8 +39,6 @@ A
 Z
 *app/[lang]/courses/[id]/@modal/default.tsx,f\1\f15fe2871d3d7697b1e98bb7883a092ac2462487
 Y
-)app/[lang]/lesson/[id]/@modal/default.tsx,4\c\4ce8f9f97f07f8736f1fb612307f1061eb61ab7c
-Y
 )app/[lang]/courses/[id]/@lesson/getAll.ts,6\3\63a19af4bdab06103fd524293e0d2c35bf7460bb
 >
 i18n-config.ts,6\e\6e6a2d551d61334f32fe3986bd63ec69fbfc2b05
@@ -52,50 +48,30 @@ Y
 +app/[lang]/courses/[id]/@lesson/loading.tsx,8\c\8cf2ac6ff3bb5aa3fbd43dbb08148654c2fc1384
 Z
 *app/[lang]/courses/[id]/@modal/loading.tsx,a\8\a85e8355688c1d87d2d3f0984026276602f78fad
-Y
-)app/[lang]/lesson/[id]/@modal/loading.tsx,4\5\4572367c631b7ba0db58fd17d6be20d8d33ad2df
-R
-"app/[lang]/lesson/[id]/loading.tsx,6\c\6c80cb405d12564f45b0e78f2464779a6e9a8dcf
 N
 app/[lang]/reviews/loading.tsx,3\f\3fd3f35016a2a5c41c0751e56cfbff92f3ac5d79
 F
 app/[lang]/loading.tsx,b\2\b280c364eba9ee04460100bb48bc3a9c2674e309
 H
 app/[lang]/not-found.tsx,d\7\d78ecddae7c28d69440688f5f05d120ee586595d
-]
--app/[lang]/lesson/[id]/@modal/delete/page.tsx,b\4\b4f04c40c4d2739aed37ab4df73e1c8087c13599
 L
 app/[lang]/settings/page.tsx,b\7\b7cf2795ed3c22f0138661fe1d92015572ea5508
 U
 %app/[lang]/lesson/[id]/staticProps.ts,c\3\c3bd31916286da3fb52c958ec65a035ef3ea00ab
 G
 styles/utils.module.css,b\8\b80f0ef32a8af297a94ac8872f6744a1c511a296
-N
-app/[lang]/courses/loading.tsx,4\e\4e4ce29a568e000aeb3e944b592c3c3912f89dd7
 K
 pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
-E
-components/Footer.tsx,0\3\035881c67fe548d6d088baa1dc920c2edd8da095
 K
 pages/api/reviews/getAll.ts,2\3\233d23d17906d3c240b56fefe7e347c3a76eba9c
 =
 middleware.ts,3\0\306298667dd8f63c95afc94693a7bfe5a20f54f5
-K
-app/[lang]/profile/page.tsx,d\7\d765f89dff0cc296483d35062adfbd5844a7c391
-V
-&app/[lang]/courses/[id]/staticProps.ts,0\4\040aded2f3001620063e6587d3e8445a93121e48
-=
-lib/prisma.ts,9\c\9c975082331e190d75de0ffaa9d8a2aff6950f8f
 D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 C
 get-dictionaries.ts,3\e\3e518cdea439d99f9e75db80351202f06a6aa1e2
 C
 app/[lang]/page.tsx,7\1\711b0c5a03bf84ba1bf18aa7b188a8fdc6211520
-E
-components/Header.tsx,3\6\36aef25bb01676aa8d3d032efb640f83d1b3a3e9
-D
-dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
 L
 components/HeaderReviews.tsx,8\3\834db865d9212917ff62fa28a12c2ca6a04bb901
 M

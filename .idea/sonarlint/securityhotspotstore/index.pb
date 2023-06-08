@@ -24,8 +24,6 @@ J
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-D
-components/Modal.tsx,b\8\b8c94ac06602f83c385d8a12461211e8552f2934
 G
 styles/modal.module.css,b\2\b25c8f79b0a1cc06ff75dc961e57fcaa9bffac1d
 H
@@ -46,14 +44,6 @@ F
 app/[lang]/loading.tsx,b\2\b280c364eba9ee04460100bb48bc3a9c2674e309
 U
 %app/[lang]/lesson/[id]/staticProps.ts,c\3\c3bd31916286da3fb52c958ec65a035ef3ea00ab
-R
-"app/[lang]/lesson/[id]/loading.tsx,6\c\6c80cb405d12564f45b0e78f2464779a6e9a8dcf
-Y
-)app/[lang]/lesson/[id]/@modal/default.tsx,4\c\4ce8f9f97f07f8736f1fb612307f1061eb61ab7c
-Y
-)app/[lang]/lesson/[id]/@modal/loading.tsx,4\5\4572367c631b7ba0db58fd17d6be20d8d33ad2df
-]
--app/[lang]/lesson/[id]/@modal/delete/page.tsx,b\4\b4f04c40c4d2739aed37ab4df73e1c8087c13599
 Z
 *app/[lang]/courses/[id]/@modal/default.tsx,f\1\f15fe2871d3d7697b1e98bb7883a092ac2462487
 Z
@@ -72,33 +62,19 @@ L
 i18n-config.ts,6\e\6e6a2d551d61334f32fe3986bd63ec69fbfc2b05
 K
 pages/api/course/courses.ts,0\e\0e3e11366c8575e99fcf420f9428dc65e5632476
-N
-app/[lang]/courses/loading.tsx,4\e\4e4ce29a568e000aeb3e944b592c3c3912f89dd7
-K
-app/[lang]/profile/page.tsx,d\7\d765f89dff0cc296483d35062adfbd5844a7c391
-E
-components/Footer.tsx,0\3\035881c67fe548d6d088baa1dc920c2edd8da095
 K
 pages/api/reviews/getAll.ts,2\3\233d23d17906d3c240b56fefe7e347c3a76eba9c
-V
-&app/[lang]/courses/[id]/staticProps.ts,0\4\040aded2f3001620063e6587d3e8445a93121e48
 =
 middleware.ts,3\0\306298667dd8f63c95afc94693a7bfe5a20f54f5
-=
-lib/prisma.ts,9\c\9c975082331e190d75de0ffaa9d8a2aff6950f8f
 D
 prisma/schema.prisma,1\8\187e4a6f168cf143dde68ce28a29ae08ce9b9578
 C
 get-dictionaries.ts,3\e\3e518cdea439d99f9e75db80351202f06a6aa1e2
 C
 app/[lang]/page.tsx,7\1\711b0c5a03bf84ba1bf18aa7b188a8fdc6211520
-E
-components/Header.tsx,3\6\36aef25bb01676aa8d3d032efb640f83d1b3a3e9
 M
 app/[lang]/reviews/layout.tsx,9\5\9586e56d14700b522982a4f2664c63a9b64ced23
 J
 components/ReviewBlock.tsx,c\3\c3514551db631af7f07c8020c61c83256073587b
-D
-dictionaries/en.json,a\1\a1d52bb758a7780beb0bae5aab04af65b5a8a754
 L
 components/HeaderReviews.tsx,8\3\834db865d9212917ff62fa28a12c2ca6a04bb901

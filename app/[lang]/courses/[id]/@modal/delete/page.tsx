@@ -1,13 +1,12 @@
 'use client'
 import Modal from "@/components/Modal";
-import Button from "@/components/Button";
-import {cache, use} from "react";
-import {useRouter} from "next/navigation";
-import styles from '../../../../../../styles/utils.module.css'
+import React, {cache, use} from "react";
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Course} from "@prisma/client";
+import DeleteCourseForm from "@/components/DeleteCourseForm";
 
-const deleteCourse = cache((id: string) =>
+
+const deleteCourseHandle = cache((id: string) =>
     fetch(`/api/course/${id}`, {
         headers: {"Content-Type": "application/json"},
         method: "DELETE",
@@ -23,7 +22,6 @@ const getCourse = cache((id: string) =>
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
     const course = use<Course>(getCourse(id));
-    const router = useRouter()
     if (!course) {
         return (
             <Modal>
@@ -33,15 +31,11 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleRemove = async () => {
-        await deleteCourse(id);
-        router.push('/courses')
+        await deleteCourseHandle(id);
     }
     return (
         <Modal>
-            <form onSubmit={handleRemove} method={'post'} className={styles.container}>
-                <h2>Are you sure you want to delete course {course.title}?</h2>
-                <Button type={'submit'}>Confirm</Button>
-            </form>
+            <DeleteCourseForm handleRemove={handleRemove} course={course}/>
         </Modal>
     )
 }

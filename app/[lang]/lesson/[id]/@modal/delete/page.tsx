@@ -1,33 +1,30 @@
 'use client'
 import Modal from "@/components/Modal";
 import Button from "@/components/Button";
-import {useEffect, useState} from "react";
+import {cache, use} from "react";
 import {useRouter} from "next/navigation";
 import styles from '../../../../../../styles/utils.module.css'
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Lesson} from "@prisma/client";
 
+const deleteLesson = cache((id: string) =>
+    fetch(`/api/lesson/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "DELETE",
+    }).then((res) => res.json())
+);
+const getLesson = cache((id: string) =>
+    fetch(`/api/lesson/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET"
+    }).then((res) => res.json())
+);
+
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
-    const [lesson, setLesson] = useState<Lesson | null>();
+    const lesson = use<Lesson>(getLesson(id));
     const router = useRouter()
     const courseId = lesson?.courseId;
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetch(`/api/lesson/${id}`, {
-                method: "GET"
-            });
-            if (!response.ok) {
-                console.error(`Failed to fetch lesson with ID: ${id}`);
-                return;
-            }
-            const data = await response.json();
-            setLesson(data);
-        }
-        if (id) {
-            getData()
-        }
-    }, [id]);
     if (!lesson) {
         return (
             <Modal>
@@ -37,9 +34,7 @@ export default function EditPage({params}: { params: { id: string } }) {
     }
 
     const handleRemove = async () => {
-        await fetch(`/api/lesson/${id}`, {
-            method: "DELETE"
-        });
+        await deleteLesson(id);
         router.refresh()
         router.push(`/courses/${courseId}`)
     }

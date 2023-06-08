@@ -2,7 +2,7 @@ import styles from '../styles/modal.module.css'
 import {useRouter} from "next/navigation";
 import {ReactNode} from "react";
 
-export default function Modal({children}: { children: ReactNode }) {
+export default function Modal({children}: { children?: ReactNode }) {
     const router = useRouter();
     const goBack = () => {
         router.back()

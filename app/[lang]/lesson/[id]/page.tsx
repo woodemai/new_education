@@ -13,11 +13,11 @@ const getLesson = cache((id: string) =>
         method: "GET"
     }).then((res) => res.json())
 );
-export default async function LessonPage({params}: { params: { id: string } }) {
+export default function LessonPage({params}: { params: { id: string } }) {
     const {id} = params;
     const router = useRouter();
     const lesson = use<Lesson>(getLesson(id));
-    return (lesson)
+    return lesson
         ? (
             <>
                 <h2>{lesson.title}</h2>
@@ -25,7 +25,7 @@ export default async function LessonPage({params}: { params: { id: string } }) {
                 <div className={styles.list}>
                     <Button onClick={() => router.push(`/lesson/${id}/edit`)}>Edit</Button>
                     <Button onClick={() => router.push(`/lesson/${id}/delete`)}>Delete</Button>
-                    <Button onClick={() => router.push(`/lesson/${lesson.courseId}`)}>Go back</Button>
+                    <Button onClick={() => router.push(`/courses/${lesson.courseId}`)}>Go back</Button>
                 </div>
             </>
         )

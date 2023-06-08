@@ -73,5 +73,15 @@
   "unauthenticated": {
     "heading": "You need to be authenticated to view this page",
     "button": "Login"
+  },
+  "modals": {
+    "deleteCourse": {
+      "question": "Are you sure you want to delete course",
+      "confirm": "Delete"
+    },
+    "deleteLesson": {
+      "question": "Are you sure you want to delete lesson",
+      "confirm": "Delete"
+    }
   }
 }
