@@ -14,14 +14,14 @@ const postCourse = cache((title: string, body: string) =>
             title,
             body,
         })
-    }).then((res) => res.json())
+    })
 );
 export default function Add() {
     const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false, language: 'en'});
     const router = useRouter()
     const handleAdd = async () => {
         await postCourse(course.title, course.body);
-        router.replace('/courses');
+        router.push('/courses');
     };
     const [heading, setHeading] = useState<string>('');
     useEffect(() => {

@@ -9,9 +9,8 @@ import {useRouter} from "next/navigation";
 
 const deleteCourseHandle = cache((id: string) =>
     fetch(`/api/course/${id}`, {
-        headers: {"Content-Type": "application/json"},
         method: "DELETE",
-    }).then((res) => res.json())
+    })
 );
 const getCourse = cache((id: string) =>
     fetch(`/api/course/${id}`, {
