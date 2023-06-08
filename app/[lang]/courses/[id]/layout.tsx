@@ -1,12 +1,10 @@
 import {ReactNode} from "react";
 
-export default function Layout(props: { children: ReactNode, course: ReactNode, modal: ReactNode, lesson: ReactNode }) {
+export default function Layout({children, modal}: { children: ReactNode, modal: ReactNode }) {
     return (
         <>
-            {props.course}
-            {props.lesson}
-            {props.children}
-            {props.modal}
+            {children}
+            {modal}
         </>
     )
 }

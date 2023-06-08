@@ -1,17 +1,14 @@
-'use client'
-import Button from "@/components/Button";
-import styles from '../../../../styles/utils.module.css'
-import {useRouter} from "next/navigation";
+import Buttons from "@/components/coursePage/Buttons";
+import Lessons from "@/components/coursePage/Lessons";
+import CourseInfo from "@/components/coursePage/CourseInfo";
 
 export default function CoursePage({params}: { params: { id: string } }) {
     const {id} = params;
-    const router = useRouter()
     return (
-            <div className={styles.list}>
-                <Button onClick={() => router.push(`/courses/${id}/add-lesson`)}>Add lesson</Button>
-                <Button onClick={() => router.push(`/courses/${id}/edit`)}>Edit</Button>
-                <Button onClick={() => router.push(`/courses/${id}/delete`)}>Delete</Button>
-                <Button onClick={() => router.push('/courses')}>Go back</Button>
-            </div>
+        <>
+            <CourseInfo id={id}/>
+            <Lessons id={id}/>
+            <Buttons id={id}/>
+        </>
     )
 }

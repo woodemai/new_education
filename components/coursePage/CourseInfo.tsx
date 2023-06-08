@@ -1,10 +1,8 @@
-'use client'
-import ReactMarkdown from "react-markdown";
+import {cache, use} from "react";
+import {Course} from "@prisma/client";
 import HeadingLoad from "@/components/loading/HeadingLoad";
 import Heading2Load from "@/components/loading/Heading2Load";
-import {Course} from "@prisma/client";
-import {cache, use} from 'react';
-
+import ReactMarkdown from "react-markdown";
 
 const getCourse = cache((id: string) =>
     fetch(`/api/course/${id}`, {
@@ -12,8 +10,7 @@ const getCourse = cache((id: string) =>
         method: "GET"
     }).then((res) => res.json())
 );
-export default function CoursePage({params}: { params: { id: string } }) {
-    const {id} = params;
+export default function CourseInfo({id}: { id: string }) {
     const course = use<Course>(getCourse(id));
     if (!course) {
         return (
@@ -22,12 +19,11 @@ export default function CoursePage({params}: { params: { id: string } }) {
                 <Heading2Load/>
             </>
         )
-    } else {
-        return (
-            <>
-                <h2>{course.title}</h2>
-                <ReactMarkdown>{course.body}</ReactMarkdown>
-            </>
-        )
     }
+    return (
+        <>
+            <h2>{course.title}</h2>
+            <ReactMarkdown>{course.body}</ReactMarkdown>
+        </>
+    )
 }
