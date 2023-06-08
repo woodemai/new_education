@@ -13,9 +13,15 @@ const renderItem = (course: Course) => {
               href={`courses/${course.id}`}/>
     )
 }
+export const revalidate = 0;
+
+async function getCourses() {
+    return prisma.course.findMany();
+}
+
 export default async function Courses({params: {lang}}: { params: { lang: Locale } }) {
     const {coursesPage} = await getDictionary(lang);
-    const courses = await prisma.course.findMany()
+    const courses: Course[] = await getCourses();
     if (!courses) {
         return <CoursesPageLoader/>
     }
