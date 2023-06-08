@@ -16,7 +16,7 @@ model Course {
   published Boolean  @default(false)
   lessons   Lesson[]
   User      User[]   @relation("CourseToUser")
-  language  String
+  language  String   @default("en")
 }
 
 model Review {
