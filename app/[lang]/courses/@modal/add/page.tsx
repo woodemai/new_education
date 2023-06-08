@@ -20,9 +20,8 @@ export default function Add() {
     const [course, setCourse] = useState<Course>({id: '', title: '', body: '', published: false});
     const router = useRouter()
     const handleAdd = async () => {
-        const {title, body} = course
-        await postCourse(title, body);
-        router.back()
+        await postCourse(course.title, course.body);
+        await router.push('/courses');
     };
     const [heading, setHeading] = useState<string>('');
     useEffect(() => {

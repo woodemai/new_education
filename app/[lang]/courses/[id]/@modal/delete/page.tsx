@@ -4,6 +4,7 @@ import React, {cache, use} from "react";
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Course} from "@prisma/client";
 import DeleteCourseForm from "@/components/DeleteCourseForm";
+import {useRouter} from "next/navigation";
 
 
 const deleteCourseHandle = cache((id: string) =>
@@ -22,6 +23,7 @@ const getCourse = cache((id: string) =>
 export default function EditPage({params}: { params: { id: string } }) {
     const {id} = params;
     const course = use<Course>(getCourse(id));
+    const router = useRouter()
     if (!course) {
         return (
             <Modal>
@@ -32,6 +34,7 @@ export default function EditPage({params}: { params: { id: string } }) {
 
     const handleRemove = async () => {
         await deleteCourseHandle(id);
+        await router.push('/courses');
     }
     return (
         <Modal>
