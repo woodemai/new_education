@@ -35,7 +35,7 @@ export default function AddReviewModal({dictionary}: {
     const [body, setBody] = useState<string>("");
     const [heading, setHeading] = useState<string>("");
     const handleAdd = async () => {
-        postReview(title, body, author);
+        await postReview(title, body, author);
         router.back()
     };
     useEffect(() => {
@@ -44,7 +44,7 @@ export default function AddReviewModal({dictionary}: {
         } else {
             setHeading("");
         }
-    }, [title]);
+    }, [title, dictionary.withHeading]);
     if (session.status === "loading") {
         return (
             <Modal>
@@ -54,6 +54,7 @@ export default function AddReviewModal({dictionary}: {
     }
     if (session.status === 'unauthenticated') {
         router.push('/unauthenticated');
+        return <></>
     }
     return (
         <Modal>
