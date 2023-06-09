@@ -14,7 +14,7 @@ export default async function Profile() {
         )
     }
     if (session.status === 'unauthenticated') {
-        router.push('/unauthenticated');
+        router.push('/unauthenticated?callback=/profile');
         return <ComponentLoad/>
     }
     if (session.status === 'authenticated' && session.data.user) {
