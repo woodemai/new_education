@@ -13,8 +13,8 @@ export default function UnAuth({dictionary}: {
     const session = useSession()
     const router = useRouter()
     if (session.status === 'authenticated') {
-        router.back();
-        return <></>
+        router.push('/');
+        return <Button href={'/profile'} children={'Profile'}/>
     }
     return (
         <div className={styles.centered}>
