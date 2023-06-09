@@ -59,7 +59,17 @@
     "heading": "Курсы",
     "noCourses": "Курсы не были найдены",
     "myCoursesHeading": "Мои курсы",
-    "addCourseBtn": "Добавить курс"
+    "addCourseBtn": "Добавить курс",
+    "modals": {
+      "createCourse": {
+        "heading": "Создать новый курс",
+        "named": "с названием",
+        "name": "Название",
+        "description": "Описание",
+        "confirm": "Создать",
+        "warning": "Название и описание должны быть заполнены"
+      }
+    }
   },
   "reviewsPage": {
     "addReviewModal": {
@@ -101,6 +111,26 @@
       "edit": "Изменить",
       "delete": "Удалить",
       "back": "Назад"
+    },
+    "modals": {
+      "createLesson": {
+        "heading": "Создать новый урок",
+        "named": "с названием",
+        "name": "Название",
+        "description": "Описание",
+        "confirm": "Создать",
+        "warning": "Название и описание должны быть заполнены!"
+      },
+      "editCourse": {
+        "heading": "Редактировать курс",
+        "name": "Название",
+        "description": "Описание",
+        "confirm": "Изменить"
+      },
+      "deleteLesson": {
+        "warning": "Вы уверены, что хотите удалить курс",
+        "delete": "Удалить"
+      }
     }
   },
   "notFoundPage": {

@@ -1,11 +1,11 @@
 'use client'
-import {cache, useEffect, useState} from "react";
+import React, {cache, useEffect, useState} from "react";
 import {useSession} from "next-auth/react";
 import {useRouter} from "next/navigation";
-import Modal from "@/components/Modal";
 import CourseLoad from "@/components/loading/CourseLoad";
 import Button from "@/components/Button";
 import Input from "@/components/InputC";
+import Modal from "@/components/modals/Modal";
 
 const postReview = cache((title: string, body: string, author: string) =>
     fetch(`/api/review`, {
@@ -54,7 +54,7 @@ export default function AddReviewModal({dictionary}: {
     }
     if (session.status === 'unauthenticated') {
         router.push('/unauthenticated');
-        return <></>
+        return null;
     }
     return (
         <Modal>

@@ -1,5 +1,5 @@
 'use client'
-import Modal from "@/components/Modal";
+import Modal from "@/components/modals/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
 import {cache, use, useState} from "react";

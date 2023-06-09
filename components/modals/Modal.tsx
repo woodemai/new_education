@@ -1,4 +1,4 @@
-import styles from '../styles/modal.module.css'
+import styles from '../../styles/modal.module.css'
 import {useRouter} from "next/navigation";
 import {ReactNode} from "react";
 

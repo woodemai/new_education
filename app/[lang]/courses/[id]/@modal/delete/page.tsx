@@ -1,43 +1,8 @@
-'use client'
-import Modal from "@/components/Modal";
-import React, {cache, use} from "react";
-import CourseLoad from "@/components/loading/CourseLoad";
-import {Course} from "@prisma/client";
-import DeleteCourseForm from "@/components/DeleteCourseForm";
-import {useRouter} from "next/navigation";
+import DeleteCourseModal from "@/components/modals/DeleteCourseModal";
+import {Locale} from "@/i18n-config";
+import {getDictionary} from "@/get-dictionaries";
 
-
-const deleteCourseHandle = cache((id: string) =>
-    fetch(`/api/course/${id}`, {
-        method: "DELETE",
-    }).then((res) => res.json())
-);
-const getCourse = cache((id: string) =>
-    fetch(`/api/course/${id}`, {
-        headers: {"Content-Type": "application/json"},
-        method: "GET"
-    }).then((res) => res.json())
-);
-
-export default function EditPage({params}: { params: { id: string } }) {
-    const {id} = params;
-    const course = use<Course>(getCourse(id));
-    const router = useRouter()
-    if (!course) {
-        return (
-            <Modal>
-                <CourseLoad/>
-            </Modal>
-        )
-    }
-
-    const handleRemove = async (): Promise<void> => {
-        await deleteCourseHandle(id);
-        router.push('/courses');
-    }
-    return (
-        <Modal>
-            <DeleteCourseForm handleRemove={handleRemove} course={course}/>
-        </Modal>
-    )
+export default async function Page({params: {id, lang}}: { params: { id: string, lang: Locale } }) {
+    const {coursePage} = await getDictionary(lang);
+    return <DeleteCourseModal id={id} dictionary={coursePage.modals.deleteLesson}/>
 }

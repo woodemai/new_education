@@ -1,5 +1,5 @@
 'use client'
-import Modal from "@/components/Modal";
+import Modal from "@/components/modals/Modal";
 import Button from "@/components/Button";
 import {cache, use} from "react";
 import {useRouter} from "next/navigation";

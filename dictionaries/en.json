@@ -59,7 +59,17 @@
     "heading": "Courses",
     "noCourses": "Courses not found",
     "myCoursesHeading": "My courses",
-    "addCourseBtn": "Add course"
+    "addCourseBtn": "Add course",
+    "modals": {
+      "createCourse": {
+        "heading": "Create new course",
+        "named": "named",
+        "name": "Name",
+        "description": "Description",
+        "confirm": "Confirm",
+        "warning": "Title and Description should not be empty!"
+      }
+    }
   },
   "reviewsPage": {
     "header": {
@@ -101,6 +111,26 @@
       "edit": "Edit",
       "delete": "Delete",
       "back": "Back"
+    },
+    "modals": {
+      "createLesson": {
+        "heading": "Create new lesson",
+        "named": "named",
+        "name": "Name",
+        "description": "Description",
+        "confirm": "Confirm",
+        "warning": "Title and Description should not be empty!"
+      },
+      "editCourse": {
+        "heading": "Edit lesson",
+        "name": "Name",
+        "description": "Description",
+        "confirm": "Confirm"
+      },
+      "deleteLesson": {
+        "warning": "Are you sure you want to delete course",
+        "delete": "Delete"
+      }
     }
   },
   "notFoundPage": {
