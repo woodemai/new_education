@@ -4,16 +4,11 @@ import {Course} from "@prisma/client";
 import {useRouter} from "next/navigation";
 import Modal from "@/components/modals/Modal";
 import DeleteCourseForm from "@/components/DeleteCourseForm";
+import {getCourse} from "@/utils/getCourse";
 
 const deleteCourseHandle = cache((id: string) =>
     fetch(`/api/course/${id}`, {
         method: "DELETE",
-    }).then((res) => res.json())
-);
-const getCourse = cache((id: string) =>
-    fetch(`/api/course/${id}`, {
-        headers: {"Content-Type": "application/json"},
-        method: "GET"
     }).then((res) => res.json())
 );
 export default function DeleteCourseModal({id, dictionary}: {

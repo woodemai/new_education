@@ -5,6 +5,7 @@ import {useRouter} from "next/navigation";
 import Modal from "@/components/modals/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
+import {getCourse} from "@/utils/getCourse";
 
 const patchCourse = cache((title: string, body: string, id: string) =>
     fetch(`/api/course/${id}`, {
@@ -14,12 +15,6 @@ const patchCourse = cache((title: string, body: string, id: string) =>
             title,
             body,
         })
-    }).then((res) => res.json())
-);
-const getCourse = cache((id: string) =>
-    fetch(`/api/course/${id}`, {
-        headers: {"Content-Type": "application/json"},
-        method: "GET"
     }).then((res) => res.json())
 );
 export default function EditCourseModal({id, dictionary}: {

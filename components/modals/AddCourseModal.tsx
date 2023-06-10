@@ -34,7 +34,7 @@ export default function AddCourseModal({dictionary}: {
         } else {
             setHeading('');
         }
-    }, [course.title]);
+    }, [course.title, dictionary.named]);
     const handleAdd = async (): Promise<void> => {
         await postCourse(course.title, course.body);
         router.push('/courses');
