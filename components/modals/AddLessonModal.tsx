@@ -38,7 +38,7 @@ export default function AddLessonModal({id, dictionary}: {
         } else {
             setHeading('');
         }
-    }, [lesson.title]);
+    }, [lesson.title, dictionary.named]);
     const router = useRouter()
 
     const handleAdd = async () => {

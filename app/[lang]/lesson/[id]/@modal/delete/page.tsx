@@ -6,17 +6,12 @@ import {useRouter} from "next/navigation";
 import styles from '../../../../../../styles/utils.module.css'
 import CourseLoad from "@/components/loading/CourseLoad";
 import {Lesson} from "@prisma/client";
+import {getLesson} from "@/utils/getLesson";
 
 const deleteLesson = cache((id: string) =>
     fetch(`/api/lesson/${id}`, {
         headers: {"Content-Type": "application/json"},
         method: "DELETE",
-    }).then((res) => res.json())
-);
-const getLesson = cache((id: string) =>
-    fetch(`/api/lesson/${id}`, {
-        headers: {"Content-Type": "application/json"},
-        method: "GET"
     }).then((res) => res.json())
 );
 
@@ -35,7 +30,6 @@ export default function EditPage({params}: { params: { id: string } }) {
 
     const handleRemove = async () => {
         await deleteLesson(id);
-        router.refresh()
         router.push(`/courses/${courseId}`)
     }
     return (

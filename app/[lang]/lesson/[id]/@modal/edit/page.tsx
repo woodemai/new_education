@@ -6,6 +6,7 @@ import {cache, use, useState} from "react";
 import {useRouter} from "next/navigation";
 import {Lesson} from "@prisma/client";
 import CourseLoad from "@/components/loading/CourseLoad";
+import {getLesson} from "@/utils/getLesson";
 
 const patchLesson = cache((title: string, body: string, id: string) =>
     fetch(`/api/lesson/${id}`, {
@@ -15,12 +16,6 @@ const patchLesson = cache((title: string, body: string, id: string) =>
             title,
             body,
         })
-    }).then((res) => res.json())
-);
-const getLesson = cache((id: string) =>
-    fetch(`/api/lesson/${id}`, {
-        headers: {"Content-Type": "application/json"},
-        method: "GET"
     }).then((res) => res.json())
 );
 

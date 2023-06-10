@@ -2,17 +2,13 @@
 import Button from "@/components/Button";
 import styles from '../../../../styles/utils.module.css'
 import {useRouter} from "next/navigation";
-import {cache, use} from "react";
+import {use} from "react";
 import ReactMarkdown from "react-markdown";
 import {Lesson} from "@prisma/client";
 import ListLoader from "@/components/loading/reviews/ListLoader";
+import {getLesson} from "@/utils/getLesson";
 
-const getLesson = cache((id: string) =>
-    fetch(`/api/lesson/${id}`, {
-        headers: {"Content-Type": "application/json"},
-        method: "GET"
-    }).then((res) => res.json())
-);
+
 export default function LessonPage({params}: { params: { id: string } }) {
     const {id} = params;
     const router = useRouter();

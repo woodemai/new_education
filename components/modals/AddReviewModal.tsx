@@ -36,15 +36,15 @@ export default function AddReviewModal({dictionary}: {
     const [heading, setHeading] = useState<string>("");
     const handleAdd = async () => {
         await postReview(title, body, author);
-        router.back()
+        router.push('/reviews')
     };
-    useEffect(() => {
-        if (title !== "") {
-            setHeading(`${dictionary.withHeading} "${title}"`);
-        } else {
-            setHeading("");
-        }
-    }, [title, dictionary.withHeading]);
+    // useEffect(() => {
+    //     if (title !== "") {
+    //         setHeading(`${dictionary.withHeading} "${title}"`);
+    //     } else {
+    //         setHeading("");
+    //     }
+    // }, [title, dictionary.withHeading]);
     if (session.status === "loading") {
         return (
             <Modal>

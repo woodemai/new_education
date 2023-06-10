@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, ReactNode} from 'react';
 import styles from '../styles/item.module.css'
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 export interface ElementProps {
     name: string;
     description: string;
-    href: string;
+    href: string,
 }
 
 const Item: FC<ElementProps> = ({name, description, href}) => {
