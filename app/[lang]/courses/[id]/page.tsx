@@ -3,16 +3,21 @@ import Lessons from "@/components/coursePage/Lessons";
 import CourseInfo from "@/components/coursePage/CourseInfo";
 import {getDictionary} from "@/get-dictionaries";
 import {Locale} from "@/i18n-config";
+import prisma from "@/lib/prisma";
+import CourseLoad from "@/components/loading/CourseLoad";
 
-export default async function CoursePage({params}: { params: { id: string, lang: Locale } }) {
-    const {lang} = params;
+export default async function CoursePage({params: {id, lang}}: { params: { id: string, lang: Locale } }) {
     const {coursePage} = await getDictionary(lang);
-    const {id} = params;
-    return (
-        <>
-            <CourseInfo id={id}/>
-            <Lessons id={id} dictionary={coursePage.lessons}/>
-            <Buttons id={id} dictionary={coursePage.buttons}/>
-        </>
-    )
+    const course = await prisma.course.findUnique({where: {id}})
+    if (course) {
+        return (
+            <>
+                <CourseInfo course={course}/>
+                <Lessons id={id} dictionary={coursePage.lessons}/>
+                <Buttons id={id} dictionary={coursePage.buttons}/>
+            </>
+        )
+    } else {
+        return <CourseLoad/>
+    }
 }
