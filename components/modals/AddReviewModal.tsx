@@ -38,13 +38,13 @@ export default function AddReviewModal({dictionary}: {
         await postReview(title, body, author);
         router.push('/reviews')
     };
-    // useEffect(() => {
-    //     if (title !== "") {
-    //         setHeading(`${dictionary.withHeading} "${title}"`);
-    //     } else {
-    //         setHeading("");
-    //     }
-    // }, [title, dictionary.withHeading]);
+    useEffect(() => {
+        if (title !== "") {
+            setHeading(`${dictionary.withHeading} "${title}"`);
+        } else {
+            setHeading("");
+        }
+    }, [title, dictionary.withHeading]);
     if (session.status === "loading") {
         return (
             <Modal>
@@ -58,13 +58,13 @@ export default function AddReviewModal({dictionary}: {
     }
     return (
         <Modal>
-            <form onSubmit={handleAdd} method={"post"}>
+            <form onSubmit={handleAdd} method="post">
                 <h2>{dictionary.createNewReview} {heading}</h2>
                 <Input title={dictionary.title} type={"text"}
                        onChangeInput={e => setTitle(e.target.value.trim())}/>
                 <Input title={dictionary.review} type={"text"}
                        onChangeArea={e => setBody(e.target.value.trim())} isArea={true}/>
-                <Button type={"submit"}>{dictionary.send}</Button>
+                <Button type="submit">{dictionary.send}</Button>
             </form>
         </Modal>
     );

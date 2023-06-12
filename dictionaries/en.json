@@ -128,9 +128,16 @@
         "confirm": "Confirm"
       },
       "deleteLesson": {
-        "warning": "Are you sure you want to delete course",
+        "warning": "Are you sure you want to delete lesson",
         "delete": "Delete"
       }
+    }
+  },
+  "lessonPage": {
+    "buttons": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "back": "Back"
     }
   },
   "notFoundPage": {

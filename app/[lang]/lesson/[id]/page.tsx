@@ -1,28 +1,21 @@
-'use client'
-import Button from "@/components/Button";
-import styles from '../../../../styles/utils.module.css'
-import {useRouter} from "next/navigation";
 import {use} from "react";
-import ReactMarkdown from "react-markdown";
 import {Lesson} from "@prisma/client";
 import ListLoader from "@/components/loading/reviews/ListLoader";
 import {getLesson} from "@/utils/getLesson";
+import Buttons from "@/components/lessonPage/Buttons";
+import LessonInfo from "@/components/lessonPage/LessonInfo";
+import {Locale} from "@/i18n-config";
+import {getDictionary} from "@/get-dictionaries";
 
 
-export default function LessonPage({params}: { params: { id: string } }) {
-    const {id} = params;
-    const router = useRouter();
+export default async function LessonPage({params: {id, lang}}: { params: { id: string, lang: Locale } }) {
+    const {lessonPage} = await getDictionary(lang);
     const lesson = use<Lesson>(getLesson(id));
     return lesson
         ? (
             <>
-                <h2>{lesson.title}</h2>
-                <ReactMarkdown>{lesson.body}</ReactMarkdown>
-                <div className={styles.list}>
-                    <Button onClick={() => router.push(`/lesson/${id}/edit`)}>Edit</Button>
-                    <Button onClick={() => router.push(`/lesson/${id}/delete`)}>Delete</Button>
-                    <Button onClick={() => router.push(`/courses/${lesson.courseId}`)}>Go back</Button>
-                </div>
+                <LessonInfo lesson={lesson}/>
+                <Buttons lesson={lesson} dictionary={lessonPage.buttons}/>
             </>
         )
         : <ListLoader/>

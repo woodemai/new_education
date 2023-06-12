@@ -133,6 +133,13 @@
       }
     }
   },
+  "lessonPage": {
+    "buttons": {
+      "edit": "Изменить",
+      "delete": "Удалить",
+      "back": "Назад"
+    }
+  },
   "notFoundPage": {
     "message": "Эта страница не найдена",
     "home": "Главная"
