@@ -4,6 +4,7 @@ import styles from '../../../styles/profile.module.css'
 import ComponentLoad from "@/components/loading/ComponentLoad";
 import ReactMarkdown from "react-markdown";
 import {useRouter} from "next/navigation";
+import Image from "next/image";
 
 export default async function Profile() {
     const session = useSession()
@@ -24,7 +25,7 @@ export default async function Profile() {
         const name = user.name ? user.name : "Can't load your name";
         return (
             <div className={styles.profile}>
-                <img src={image} alt={'avatar'} width={200} height={200}/>
+                <Image src={image} alt={'avatar'} width={200} height={200}/>
                 <ReactMarkdown>{name}</ReactMarkdown>
                 <div className={styles.email}>
                     <span>Email</span>
