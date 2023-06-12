@@ -1,6 +1,8 @@
 import {cache} from "react";
-import prisma from "@/lib/prisma";
 
 export const getCourse = cache((id: string) =>
-    prisma.course.findUnique({where: {id}})
+    fetch(`/api/course/${id}`, {
+        headers: {"Content-Type": "application/json"},
+        method: "GET",
+    }).then((res) => res.json())
 );
