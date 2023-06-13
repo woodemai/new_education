@@ -1,7 +1,7 @@
 'use client'
 import {cache, useEffect, useState} from "react";
 import {Lesson} from "@prisma/client";
-import {useRouter} from "next/navigation";
+import {redirect} from "next/navigation";
 import Modal from "@/components/modals/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
@@ -39,12 +39,11 @@ export default function AddLessonModal({id, dictionary}: {
             setHeading('');
         }
     }, [lesson.title, dictionary.named]);
-    const router = useRouter()
 
     const handleAdd = async () => {
         if (lesson.title !== "" && lesson.body !== "") {
             await postLesson(lesson.title, lesson.body, id);
-            router.back()
+            redirect(`/courses/${lesson.courseId}`)
         } else {
             alert(dictionary.warning)
         }

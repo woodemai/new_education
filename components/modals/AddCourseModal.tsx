@@ -4,7 +4,7 @@ import {Course} from "@prisma/client";
 import Modal from "@/components/modals/Modal";
 import Input from "@/components/InputC";
 import Button from "@/components/Button";
-import Link from "next/link";
+import {redirect} from "next/navigation";
 
 const postCourse = cache((title: string, body: string) =>
     fetch(`/api/course`, {
@@ -36,6 +36,7 @@ export default function AddCourseModal({dictionary}: {
     }, [course.title, dictionary.named]);
     const handleAdd = async (): Promise<void> => {
         await postCourse(course.title, course.body);
+        redirect('/courses')
     };
     return (
         <Modal>
@@ -45,9 +46,7 @@ export default function AddCourseModal({dictionary}: {
                        onChangeInput={e => setCourse({...course, title: e.target.value.trim()})}/>
                 <Input title={dictionary.description} type={'text'}
                        onChangeArea={e => setCourse({...course, body: e.target.value.trim()})} isArea={true}/>
-                <Link href={'/courses'}>
-                    <Button type="button" onClick={handleAdd}>{dictionary.confirm}</Button>
-                </Link>
+                <Button type="button" onClick={handleAdd}>{dictionary.confirm}</Button>
             </form>
         </Modal>
     )

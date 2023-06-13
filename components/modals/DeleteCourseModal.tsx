@@ -1,7 +1,7 @@
 'use client'
 import React, {cache, use} from "react";
 import {Course} from "@prisma/client";
-import {useRouter} from "next/navigation";
+import {redirect} from "next/navigation";
 import Modal from "@/components/modals/Modal";
 import DeleteCourseForm from "@/components/DeleteCourseForm";
 import {getCourse} from "@/utils/getCourse";
@@ -19,11 +19,10 @@ export default function DeleteCourseModal({id, dictionary}: {
     }
 }) {
     const course = use<Course>(getCourse(id));
-    const router = useRouter()
 
     const handleRemove = async (): Promise<void> => {
         await deleteCourseHandle(id);
-        router.push('/courses');
+        redirect('/courses')
     }
     return (
         <Modal>
