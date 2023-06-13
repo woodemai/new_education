@@ -60,6 +60,7 @@
     "noCourses": "Courses not found",
     "myCoursesHeading": "My courses",
     "addCourseBtn": "Add course",
+    "search": "Search",
     "modals": {
       "createCourse": {
         "heading": "Create new course",

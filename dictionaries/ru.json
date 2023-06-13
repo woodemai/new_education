@@ -60,6 +60,7 @@
     "noCourses": "Курсы не были найдены",
     "myCoursesHeading": "Мои курсы",
     "addCourseBtn": "Добавить курс",
+    "search": "Поиск",
     "modals": {
       "createCourse": {
         "heading": "Создать новый курс",
