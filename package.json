@@ -28,7 +28,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
     "typescript": "5.0.4",
-    "vercel": "^30.0.0"
+    "vercel": "^33.5.1"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.1",
