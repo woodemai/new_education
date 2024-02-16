@@ -16,7 +16,7 @@ const Header = ({ dictionary }: Props) => {
             <ul>
                 <li><Link href={'/reviews'}>{dictionary.allReviews}</Link></li>
                 <li><Link href={`/reviews`}>{dictionary.myReviews}</Link></li>
-                <li><Link href={`/reviews/add`}>{dictionary.addReview}</Link></li>
+                <li><Link href={`/reviews/create`}>{dictionary.addReview}</Link></li>
             </ul>
         </div>
     )
