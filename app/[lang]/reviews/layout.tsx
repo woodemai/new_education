@@ -5,18 +5,16 @@ import Header from "@/components/pages/review/header/Header";
 
 interface Props {
     children: ReactNode,
-    modal: ReactNode,
     params: { lang: Locale }
 }
 
-const Layout = async ({ children, modal, params: { lang } }: Props) => {
+const Layout = async ({ children, params }: Props) => {
 
-    const { reviewsPage } = await getDictionary(lang);
+    const { reviewsPage } = await getDictionary(params.lang);
 
     return (
         <>
             <Header dictionary={reviewsPage.header} />
-            {modal}
             {children}
         </>
     )
