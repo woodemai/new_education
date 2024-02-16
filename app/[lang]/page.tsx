@@ -1,20 +1,15 @@
-import List from "@/components/List";
-import Item from "@/components/Item";
-import ReactMarkdown from "react-markdown";
-import {Locale} from "@/i18n-config";
-import {getDictionary} from "@/get-dictionaries";
+import { List } from "@/components/shared/list";
+import { Item } from "@/components/entities/item";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionaries";
 
 const renderItem = (page: { name: string, desc: string, href?: string }) => {
     const link = page.href ? page.href : "/";
     return (
-        <Item name={page.name} description={page.desc} href={link} key={page.href}/>
+        <Item name={page.name} description={page.desc} href={link} key={page.href} />
     )
 }
-export default async function Home({
-                                       params: {lang},
-                                   }: {
-    params: { lang: Locale }
-}) {
+const Home = async ({ params: { lang }, }: { params: { lang: Locale } }) => {
     const dictionary = await getDictionary(lang);
 
     const pages = dictionary.home.pagesArr;
@@ -22,9 +17,10 @@ export default async function Home({
     return (
         <>
             <h1>{dictionary.home.heading}</h1>
-            <ReactMarkdown>{dictionary.home.body}</ReactMarkdown>
-            <List items={pages} element={(page) => renderItem(page)} heading={dictionary.home.pages}/>
-            <List items={tasks} element={(task) => renderItem(task)} heading={dictionary.home.roadmap}/>
+            <p>{dictionary.home.body}</p>
+            <List items={pages} element={(page) => renderItem(page)} heading={dictionary.home.pages} />
+            <List items={tasks} element={(task) => renderItem(task)} heading={dictionary.home.roadmap} />
         </>
     )
 }
+export default Home

@@ -3,8 +3,8 @@ import {cache, use, useState} from "react";
 import {Course} from "@prisma/client";
 import {useRouter} from "next/navigation";
 import Modal from "@/components/modals/Modal";
-import Input from "@/components/InputC";
-import Button from "@/components/Button";
+import { Input } from "@/components/shared/input";
+import { Button } from "@/components/shared/button";
 import {getCourse} from "@/utils/getCourse";
 
 const patchCourse = cache((title: string, body: string, id: string) =>

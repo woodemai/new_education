@@ -1,23 +1,30 @@
-import List from "@/components/List";
-import Button from "@/components/Button";
-import ReviewBlock from "@/components/ReviewBlock";
-import {Review} from "@prisma/client";
-import {Locale} from "@/i18n-config";
-import {getDictionary} from "@/get-dictionaries";
+import { Review } from "@prisma/client";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionaries";
+import { Button } from "@/components/shared/button";
+import { List } from "@/components/shared/list";
+import { ReviewCard } from "@/components/entities/review";
 import prisma from "@/lib/prisma";
 
+
 const renderReview = (review: Review) => {
-    return <ReviewBlock review={review} key={review.id}/>
+    return <ReviewCard review={review} key={review.id} />
 }
 export const revalidate = 10;
-export default async function ReviewsPage({params: {lang}}: { params: { lang: Locale } }) {
-    const {reviewsPage} = await getDictionary(lang);
-    const reviews: Review[] = await prisma.review.findMany({
+
+interface Props { params: { lang: Locale } }
+
+const ReviewsPage = async ({ params }: Props) => {
+
+    const { reviewsPage } = await getDictionary(params.lang);
+
+    const reviews = await prisma.review.findMany({
         orderBy: {
             createdAt: "desc"
         },
         take: 10
     });
+
     if (!reviews.length) {
         return (
             <>
@@ -26,11 +33,9 @@ export default async function ReviewsPage({params: {lang}}: { params: { lang: Lo
             </>
         );
     }
+
     return (
-        <>
-            <List items={reviews}
-                  element={(review: Review) => renderReview(review)}
-                  heading={reviewsPage.heading}/>
-        </>
+        <List items={reviews} element={review => renderReview(review)} heading={reviewsPage.heading} />
     );
 }
+export default ReviewsPage

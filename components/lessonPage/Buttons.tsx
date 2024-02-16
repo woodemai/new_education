@@ -1,8 +1,8 @@
-import styles from "@/styles/utils.module.css";
-import Button from "@/components/Button";
-import {Lesson} from "@prisma/client";
+import styles from "@/components/shared/list/list.module.css";
+import { Button } from "@/components/shared/button";
+import { Lesson } from "@prisma/client";
 
-export default function Buttons({lesson, dictionary}: {
+export default function Buttons({ lesson, dictionary }: {
     lesson: Lesson, dictionary: {
         edit: string,
         delete: string,

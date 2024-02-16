@@ -3,8 +3,8 @@ import React, {cache, useEffect, useState} from "react";
 import {useSession} from "next-auth/react";
 import {useRouter} from "next/navigation";
 import CourseLoad from "@/components/loading/CourseLoad";
-import Button from "@/components/Button";
-import Input from "@/components/InputC";
+import { Button } from "@/components/shared/button";
+import { Input } from "@/components/shared/input";
 import Modal from "@/components/modals/Modal";
 
 const postReview = cache((title: string, body: string, author: string) =>
