@@ -8,11 +8,9 @@ import { ChangeEvent, memo, useState } from "react";
 
 interface Props {
     heading: string,
-    named: string,
     name: string,
     description: string,
     confirm: string,
-    warning: string,
     initialTitle: string,
     initialBody: string,
     handleUpdate: (title: string, body: string) => void

@@ -1,6 +1,6 @@
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionaries";
-import UnAuth from "@/components/widgets/UnAuth";
+import { UnAuth } from "@/components/widgets/header";
 
 interface Props { params: { lang: Locale } }
 
