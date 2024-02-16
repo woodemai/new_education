@@ -1,7 +1,7 @@
 'use client'
 import Modal from "@/components/modals/Modal";
 import styles from "@/styles/utils.module.css";
-import Button from "@/components/Button";
+import { Button } from "@/components/shared/button";
 import {Lesson} from "@prisma/client";
 import {useRouter} from "next/navigation";
 import {cache} from "react";

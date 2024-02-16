@@ -1,0 +1,55 @@
+.button {
+  text-align: center;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+
+  transition: 0.2s linear;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.primary {
+  background: linear-gradient(-45deg, #000, #333);
+  background-size: 400% 400%;
+  animation: gradient 15s linear infinite;
+  color: white;
+}
+.primary:hover {
+  box-shadow: 0 0 4px 4px hsla(0, 0%, 80%, 0.2);
+  background: linear-gradient(-45deg, #ccc, #aaa);
+  background-size: 400%;
+  animation: gradient 3s linear infinite;
+  color: black;
+}
+
+.secondary {
+  background-color: white;
+  color: #333;
+}
+.secondary:hover {
+  background-color: #eee;
+  color: black;
+}
+.destructive {
+  background-color: rgb(255, 76, 60);
+  color: white;
+}
+
+.destructive:hover {
+  background-color: rgb(194, 32, 17);
+  color: white;
+}

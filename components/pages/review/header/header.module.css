@@ -1,0 +1,27 @@
+.header nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 10px 10px hsla(0, 0%, 80%, .3);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,20 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.input * {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.input input,
+.input textarea {
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}

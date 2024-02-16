@@ -3,8 +3,8 @@ import {cache, useEffect, useState} from "react";
 import {Lesson} from "@prisma/client";
 import {redirect} from "next/navigation";
 import Modal from "@/components/modals/Modal";
-import Input from "@/components/InputC";
-import Button from "@/components/Button";
+import { Input } from "@/components/shared/input";
+import { Button } from "@/components/shared/button";
 
 const postLesson = cache((title: string, body: string, courseId: string) =>
     fetch(`/api/lesson`, {
