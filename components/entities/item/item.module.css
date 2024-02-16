@@ -1,53 +1,50 @@
 .item {
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    background: linear-gradient(-45deg, #fff, #eee);
-    background-size: 400% 400%;
-    animation: gradient 10s linear infinite;
-    color: black;
-    cursor: pointer;
-    box-shadow: 0 0 4px 4px hsla(0, 0%, 80%, 0.2);
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background: white;
+  background-size: 400% 400%;
+  animation: gradient 10s linear infinite;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
-    transition: .1s linear;
+  transition: 0.1s linear;
 }
 
 .item__inner {
-    padding: 20px;
+  padding: 20px;
 }
 
 .item:hover {
-    box-shadow: 0 0 4px 4px hsla(0, 0%, 50%, 0.5);
-    transform: scale(101%);
-    background: linear-gradient(-45deg, #555, #000);
-    background-size: 400% 400%;
-    animation: hover 5s linear infinite;
-    color: white;
+  color: black;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.7);
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 
 @keyframes hover {
-    0% {
-        background-position: 0 50%;
-        box-shadow: 0 0 6px 6px hsla(0, 0%, 50%, 0.5);
-    }
-    50% {
-        background-position: 100% 50%;
-        box-shadow: 0 0 2px 2px hsla(0, 0%, 50%, 0.5);
-    }
-    100% {
-        background-position: 0 50%;
-        box-shadow: 0 0 6px 6px hsla(0, 0%, 50%, 0.5);
-    }
+  0% {
+    background-position: 0 50%;
+    box-shadow: 0 0 6px 6px hsla(0, 0%, 50%, 0.5);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 2px 2px hsla(0, 0%, 50%, 0.5);
+  }
+  100% {
+    background-position: 0 50%;
+    box-shadow: 0 0 6px 6px hsla(0, 0%, 50%, 0.5);
+  }
 }

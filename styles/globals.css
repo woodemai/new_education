@@ -7,38 +7,35 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
 
+body {
+    background-color: #eeeeee;
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
 /* header */
+
+.menu {
+    background: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
     .horizontalNav {
         display: none;
     }
-
     .menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: 8px;
-        cursor: pointer;
+        display: block;
     }
-
-    .menu div {
-        box-shadow: 0 0 2px 2px hsla(0, 0%, 80%, .5);
-        width: 50px;
-        height: 6px;
-        border-radius: 2px;
-        background-color: black;
-        color: black;
-    }
-
 }
 
-header {
+.horizontal-nav {
     width: 100%;
     padding: 20px;
     background-color: hsla(0, 5%, 100%, .5);
@@ -54,7 +51,7 @@ header {
     z-index: 1000;
 }
 
-header h1 {
+.horizontal-nav h1 {
     text-transform: uppercase;
 }
 
@@ -69,7 +66,7 @@ header h1 {
         box-shadow: 0 5px 10px 10px hsla(0, 0%, 80%, .3);
     }
 }
-header ul {
+.horizontal-nav ul {
     text-align: center;
     list-style: none;
     display: flex;
@@ -78,17 +75,17 @@ header ul {
     align-items: center;
 }
 
-header li {
+.horizontal-nav li {
     margin-left: 14px;
 }
 
-header a {
+.horizontal-nav a {
     color: #333;
 
     transition: .15s linear;
 }
 
-header a:hover {
+.horizontal-nav a:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     color: black;
 }
@@ -169,5 +166,5 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 }

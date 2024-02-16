@@ -6,7 +6,7 @@ import { NextAuthProvider } from "@/components/widgets/providers/NextAuthProvide
 import { i18n, Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionaries";
 import Footer from "@/components/widgets/Footer";
-import Header from "@/components/widgets/Header";
+import { Header } from "@/components/widgets/header";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,11 +35,11 @@ const RootLayout = async ({ children, params }: RootProps) => {
         <html lang={params.lang}>
             <body className={inter.className}>
                 <NextAuthProvider>
-                    <Header dictionary={dictionary.header} />
+                    <Header {...dictionary.header} />
                     <main>
                         {children}
                     </main>
-                    <Footer dictionary={dictionary.footer} />
+                    <Footer {...dictionary.footer} />
                 </NextAuthProvider>
             </body>
         </html>

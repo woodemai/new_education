@@ -38,7 +38,7 @@ const Courses = async ({ params }: Props) => {
             <h1>{coursesPage.heading}</h1>
             <CoursesList courses={courses} heading={coursesPage.myCoursesHeading} search={coursesPage.search}
                 noCourses={coursesPage.noCourses} />
-            <Button href={"/courses/add"}>{coursesPage.addCourseBtn}</Button>
+            <Button href={"/courses/create"}>{coursesPage.addCourseBtn}</Button>
         </>
     );
 }

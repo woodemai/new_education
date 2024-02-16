@@ -8,12 +8,15 @@ const renderItem = (lesson: Lesson) => {
             href={`/lesson/${lesson.id}`} />
     )
 }
-export default function Lessons({ lessons, dictionary }: {
+
+interface Props {
     lessons: Lesson[], dictionary: {
         title: string,
         noLessons: string,
     }
-}) {
+}
+
+export const LessonList = ({ lessons, dictionary }: Props) => {
     if (!lessons.length) {
         return (
             <div style={{ margin: '10px 0' }}>

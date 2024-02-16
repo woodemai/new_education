@@ -1,18 +1,22 @@
 'use client'
 import styles from "@/styles/utils.module.css";
 import { Button } from "@/components/shared/button";
-import {signIn, useSession} from "next-auth/react";
-import {useRouter} from "next/navigation";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-export default function UnAuth({dictionary}: {
+interface Props {
     dictionary: {
         heading: string,
         button: string,
     }
-}) {
-    const session = useSession()
+}
+
+const UnAuth = ({ dictionary }: Props) => {
+
+    const { status } = useSession()
     const router = useRouter()
-    if (session.status === 'authenticated') {
+
+    if (status === 'authenticated') {
         router.push('/');
         return <Button href={'/profile'}>Profile</Button>
     }
@@ -25,3 +29,4 @@ export default function UnAuth({dictionary}: {
         </div>
     )
 }
+export default UnAuth

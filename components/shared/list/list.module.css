@@ -1,7 +1,8 @@
-.list * {
-    margin-top: 10px;
-}
 .list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     width: 100%;
+    max-width: 800px;
     margin: 10px 0;
 }

@@ -1,12 +1,11 @@
 import { memo } from "react";
 
-interface InfoProps {
+interface Props {
     title: string,
     body: string
 }
 
-const CourseInfo = memo(function Info({ title, body }: InfoProps) {
-
+const LessonInfo = memo(function Info({ title, body }: Props) {
     return (
         <>
             <h2>{title}</h2>
@@ -14,4 +13,4 @@ const CourseInfo = memo(function Info({ title, body }: InfoProps) {
         </>
     )
 })
-export default CourseInfo
+export default LessonInfo

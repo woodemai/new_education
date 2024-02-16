@@ -1,5 +1,5 @@
 import Buttons from "./Buttons";
 import CourseInfo from "./CourseInfo";
-import Lessons from "./Lessons";
+import { LessonList } from "./LessonList";
 
-export {Buttons, CourseInfo, Lessons}
+export { Buttons, CourseInfo, LessonList };
