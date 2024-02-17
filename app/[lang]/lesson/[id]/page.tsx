@@ -1,8 +1,6 @@
-import ListLoader from "@/components/loading/reviews/ListLoader";
-
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionaries";
-import { getLessonServer } from "@/utils/getLesson";
+import { editLesson, getLesson } from "@/utils/lesson";
 import { Buttons, LessonInfo } from "@/components/pages/lesson";
 
 interface Props {
@@ -12,16 +10,23 @@ interface Props {
 const LessonPage = async ({ params: { id, lang } }: Props) => {
 
     const { lessonPage } = await getDictionary(lang);
-    const lesson = await getLessonServer(id);
+    const lesson = await getLesson(id);
+    
+    const handleEdit = async (title: string, body: string) => {
+        'use server'
+        await editLesson(id, title, body)
+    }
 
     if (lesson) {
+
+        const { title, body, courseId } = lesson;
+        
         return (
             <>
-                <LessonInfo title={lesson.title} body={lesson.body} />
-                <Buttons lesson={lesson} dictionary={lessonPage.buttons} />
+                <LessonInfo handleEdit={handleEdit} edit={lessonPage.edit} save={lessonPage.save } title={title} body={body} />
+                <Buttons id={id} courseId={courseId} deleteText={lessonPage.buttons.delete} back={lessonPage.buttons.back} />
             </>
         )
     }
-    return <ListLoader />
 }
-export default LessonPage
+export default LessonPage;

@@ -1,19 +1,20 @@
 import styles from "@/components/shared/list/list.module.css";
 import { Button } from "@/components/shared/button";
-import { Lesson } from "@prisma/client";
+import { memo } from "react";
 
-export default function Buttons({ lesson, dictionary }: {
-    lesson: Lesson, dictionary: {
-        edit: string,
-        delete: string,
-        back: string,
-    }
-}) {
+interface Props {
+    id: string
+    courseId: string,
+    deleteText: string,
+    back: string
+}
+
+const Buttons = memo(function Buttons({ courseId, id, deleteText, back }: Props) {
     return (
         <div className={styles.list}>
-            <Button href={`/lesson/${lesson.id}/edit`}>{dictionary.edit}</Button>
-            <Button href={`/lesson/${lesson.id}/delete`}>{dictionary.delete}</Button>
-            <Button href={`/courses/${lesson.courseId}`}>{dictionary.back}</Button>
+            <Button variant="destructive" href={`/lesson/${id}/delete`}>{deleteText}</Button>
+            <Button variant="secondary" href={`/courses/${courseId}`}>{back}</Button>
         </div>
     )
-}
+})
+export default Buttons;

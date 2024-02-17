@@ -135,8 +135,9 @@
     }
   },
   "lessonPage": {
+    "edit": "Edit",
+    "save": "Save",
     "buttons": {
-      "edit": "Edit",
       "delete": "Delete",
       "back": "Back"
     }

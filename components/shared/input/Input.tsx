@@ -1,8 +1,8 @@
 import styles from './input.module.css'
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, useId } from "react";
 
 interface InputProps {
-    title: string;
+    title?: string;
     type: 'text' | 'password' | 'number';
     defaultValue?: string;
     isArea?: boolean;
@@ -12,7 +12,7 @@ interface InputProps {
 }
 
 const Input: FC<InputProps> = ({ title, type, defaultValue, isArea, onChangeArea, onChangeInput }) => {
-    const id = title.trim().toLowerCase();
+    const id = useId();
     if (isArea) {
         return (
             <div className={styles.input}>
