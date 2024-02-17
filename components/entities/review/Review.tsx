@@ -1,18 +1,20 @@
 'use client'
 import styles from "./review.module.css";
-import { Review } from "@prisma/client";
+
+interface Props  {
+    title: string,
+    body: string,
+    author: string,
+    createdAt: Date
+}
+const ReviewCard = ({ title, body, author, createdAt }: Props) => {
 
 
-const ReviewCard = ({ review }: { review: Review }) => {
-    const date = "";
     return (
         <div className={styles.item}>
-            <div className={styles.item__inner}>
-                <h3>{review.title}</h3>
-                <p>{review.body}</p>
-                <p className={styles.author}>{date}</p>
-                <p className={styles.author}>{review.author}</p>
-            </div>
+                <h3>{title}</h3>
+                <p>{body}</p>
+            <p className={styles.author}>{`${author} - ${createdAt.toLocaleDateString()}`}</p>
         </div>
     );
 };
