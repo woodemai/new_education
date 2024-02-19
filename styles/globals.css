@@ -145,10 +145,11 @@ main {
     margin: 0 auto;
     padding: 20px 0;
     min-height: 100vh;
-    max-width: min(800px, 98vw);
+    max-width: min(1000px, 98vw);
     width: 100%;
-    display: flex;
+    display: flex;  
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    row-gap: 20px;
 }

@@ -1,10 +1,10 @@
 'use client'
 import { FC, useEffect, useState } from "react";
-import { List } from "@/components/shared/list";
 import { Course } from "@prisma/client";
 import { Item } from "@/components/entities/item";
 import { Input } from "@/components/shared/input";
 import styles from "@/components/shared/list/list.module.css";
+import Grid from "@/components/shared/grid/Grid";
 
 const renderItem = (course: Course) => {
     return (
@@ -31,7 +31,7 @@ const CoursesList: FC<Props> = ({ courses, heading, search, noCourses }) => {
             <Input title={search} type="text" onChangeInput={e =>
                 setSearchValue(e.target.value)} />
             {list.length ?
-                <List items={list}
+                <Grid items={list}
                     element={(course: Course) => renderItem(course)} heading={heading} />
                 :
                 <h2 className={styles.container}>{noCourses}</h2>
